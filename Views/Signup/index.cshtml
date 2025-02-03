@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/signup.css" asp-append-version="true">
+</head>
+<body>
+    <div id="signupcanvas">
+        <div id="signupbox">
+            <div id="signuptext">
+                Sign Up
+            </div>
+
+            <form method="post" action="/Account/Register">
+                <div id="firstnameboxinputbox">
+                    <input type="text" id="firstnameinput" name="FirstName" placeholder="First Name" required>
+                </div>
+
+                <div id="lastnameboxinputbox">
+                    <input type="text" id="lastnameinput" name="LastName" placeholder="Last Name" required>
+                </div>
+
+                <div id="birthdateboxinputbox">
+                    <input type="date" id="birthdateinput" name="BirthDate" required>
+                </div>
+
+                <div id="genderboxinputbox">
+                    <select id="genderinput" name="Gender" required>
+                        <option value="" selected hidden>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div id="usernameboxinputbox">
+                    <input type="text" id="usernameinput" name="Username" placeholder="Username" required>
+                </div>
+
+                <div id="passwordboxinputbox">
+                    <input type="password" id="passwordinput" name="Password" placeholder="Password" required>
+                </div>
+
+                <div id="confirmpasswordboxinput">
+                    <input type="password" id="confirmpasswordinput" name="ConfirmPassword" placeholder="Confirm Password" required>
+                </div>
+
+                <div id="loginbox">
+                    Already have an account?
+                    <a asp-controller="Login" asp-action="Index" id="loginlink">Login</a>
+                </div>
+
+                <div id="signinbox">
+                    <button type="submit" id="signinbutton">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
