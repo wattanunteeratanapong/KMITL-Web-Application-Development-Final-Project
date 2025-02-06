@@ -12,7 +12,7 @@ namespace BasicASP.Controllers
         {
             _logger = logger;
         }
-
+        //testc
         public IActionResult Index()
         {
             return View();
