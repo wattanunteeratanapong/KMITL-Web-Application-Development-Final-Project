@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;  
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Web Name</title>
-    <link rel="stylesheet" href="~/css/login.css">  
+    <link rel="stylesheet" href="~/css/login.css">
 </head>
 <body>
     <div id="logincanvas">
@@ -21,13 +21,20 @@
                 NameWeb
             </div>
 
-            <form method="post" asp-controller="Account" asp-action="Login">
+            <!-- ✅ แสดงข้อความแจ้งเตือนถ้าล็อกอินไม่สำเร็จ -->
+            @if (ViewBag.Error != null)
+            {
+                <p style="color: red; text-align: center;">@ViewBag.Error</p>
+            }
+
+            <form method="post" asp-controller="Login" asp-action="Login">
+                <!-- ✅ เปลี่ยนเป็น LoginController -->
                 <div id="usernamebox">
                     <div id="usernameboxtextbox">
                         username
                     </div>
                     <div id="usernameboxinputbox">
-                        <input type="text" id="usernameinput" name="Username" />
+                        <input type="text" id="usernameinput" name="Username" required />
                     </div>
                 </div>
 
@@ -36,7 +43,7 @@
                         password
                     </div>
                     <div id="passwordboxinput">
-                        <input type="password" id="passwordinput" name="Password" />
+                        <input type="password" id="passwordinput" name="Password" required />
                     </div>
                     <div id="signupbox">
                         <a asp-controller="Signup" asp-action="Index" id="signuplink">Sign up?</a>

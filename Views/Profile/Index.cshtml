@@ -1,0 +1,94 @@
+﻿@model Togeta.Models.Profile
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.FirstName @Model.LastName - Profile</title>
+    <link rel="stylesheet" href="~/css/profile.css">
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <!-- ✅ ใช้ Cover Photo จากฐานข้อมูล -->
+            <img src="@Model.CoverPhotoUrl" class="cover-photo" alt="Cover Photo">
+
+            <!-- ✅ ปรับปุ่มให้ใช้ไอคอนจาก Bootstrap -->
+            <a href="@Url.Action("Edit", "Profile", new { id = Model.Id })" class="edit-cover-button">
+                <i class="bi bi-pencil"></i>
+            </a>
+
+            <!-- ✅ รูปโปรไฟล์ -->
+            <div class="profile-pic">
+                <img src="@Model.ProfilePictureUrl" alt="Profile Picture">
+            </div>
+        </div>
+
+        <!-- ข้อมูลผู้ใช้ -->
+        <div class="profile-info">
+            <h2><i>@Model.FirstName @Model.LastName</i></h2>
+            <p><strong>Bio :</strong> @Model.Bio</p>
+            <p><strong>Credit Score :</strong> 00 <i class="fa fa-star"></i></p>
+            <p>
+                <strong>Interests :</strong>
+                @foreach (var interest in Model.Interests.Split(','))
+                {
+                    <span class="tag">@interest</span>
+                }
+            </p>
+        </div>
+
+        <!-- เมนูแท็บ -->
+        <div class="profile-tabs">
+            <button class="tab active" onclick="openTab('events')">Events</button>
+            <button class="tab" onclick="openTab('hosts')">Hosts</button>
+            <button class="tab" onclick="openTab('reviews')">Reviews</button>
+        </div>
+
+        <!-- ✅ ส่วนแสดงข้อมูลของแต่ละ Tab -->
+        <div class="tab-content">
+            <div id="events" class="tab-panel active">
+                <h3>Events I Joined</h3>
+                <p>List of events you have joined in the past.</p>
+            </div>
+
+            <div id="hosts" class="tab-panel">
+                <h3>Events I Host</h3>
+                <p>List of events you have hosted.</p>
+            </div>
+
+            <div id="reviews" class="tab-panel">
+                <h3>People That Reviewed Me</h3>
+                <p>Reviews from people who have interacted with you.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ JavaScript สำหรับเปลี่ยนแท็บ -->
+    <script>
+        function openTab(tabName) {
+            // ✅ ซ่อนทุก Tab Panel ก่อน
+            var tabs = document.querySelectorAll('.tab-panel');
+            tabs.forEach(tab => tab.style.display = "none");
+
+            // ✅ เอา Active ออกจากทุกปุ่ม
+            var buttons = document.querySelectorAll('.tab');
+            buttons.forEach(btn => btn.classList.remove("active"));
+
+            // ✅ แสดงเฉพาะ Tab ที่ถูกเลือก
+            document.getElementById(tabName).style.display = "block";
+
+            // ✅ เพิ่ม Active ให้ปุ่มที่ถูกเลือก
+            event.currentTarget.classList.add("active");
+        }
+
+        // ✅ ตั้งค่าให้โหลดมาหน้าแรกแสดง Events
+        document.addEventListener("DOMContentLoaded", function() {
+            openTab('events');
+        });
+    </script>
+
+</body>
+</html>

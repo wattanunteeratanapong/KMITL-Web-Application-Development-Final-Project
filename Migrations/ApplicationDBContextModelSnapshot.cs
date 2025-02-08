@@ -22,6 +22,71 @@ namespace Togeta.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Togeta.Models.Profile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Bio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CoverPhotoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Interests")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePictureUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Profiles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Bio = "I love coding!",
+                            CoverPhotoUrl = "https://source.unsplash.com/800x300/?technology",
+                            Email = "john.doe@example.com",
+                            FirstName = "John",
+                            Interests = "C#, .NET, MVC",
+                            LastName = "Doe",
+                            ProfilePictureUrl = "https://via.placeholder.com/150"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Bio = "Full-stack Developer",
+                            CoverPhotoUrl = "https://source.unsplash.com/800x300/?nature",
+                            Email = "jane.smith@example.com",
+                            FirstName = "Jane",
+                            Interests = "React, JavaScript, Node.js",
+                            LastName = "Smith",
+                            ProfilePictureUrl = "https://via.placeholder.com/150"
+                        });
+                });
+
             modelBuilder.Entity("Togeta.Models.User", b =>
                 {
                     b.Property<int>("Id")

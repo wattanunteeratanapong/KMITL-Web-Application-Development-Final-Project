@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta\\Togeta\\Togeta.csproj": {}
+    "C:\\Users\\User\\Desktop\\Web App Project\\Togeta.csproj": {}
   },
   "projects": {
-    "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta\\Togeta\\Togeta.csproj": {
+    "C:\\Users\\User\\Desktop\\Web App Project\\Togeta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta\\Togeta\\Togeta.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Web App Project\\Togeta.csproj",
         "projectName": "Togeta",
-        "projectPath": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta\\Togeta\\Togeta.csproj",
-        "packagesPath": "C:\\Users\\watta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta\\Togeta\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Web App Project\\Togeta.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Web App Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\watta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

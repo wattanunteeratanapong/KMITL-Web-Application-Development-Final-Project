@@ -1,0 +1,29 @@
+﻿@model Togeta.Models.Profile
+
+<h2>Edit Profile</h2>
+<form method="post" enctype="multipart/form-data">
+    <label>First Name</label>
+    <input type="text" asp-for="FirstName" required />
+
+    <label>Last Name</label>
+    <input type="text" asp-for="LastName" required />
+
+    <label>Email</label>
+    <input type="email" asp-for="Email" required />
+
+    <label>Bio</label>
+    <textarea asp-for="Bio"></textarea>
+
+    <label>Interests</label>
+    <input type="text" asp-for="Interests" />
+
+    <!-- ✅ อัปโหลด Profile Picture -->
+    <label>Profile Picture</label>
+    <input type="file" name="profilePicture" accept="image/*" />
+
+    <!-- ✅ อัปโหลด Cover Photo -->
+    <label>Cover Photo</label>
+    <input type="file" name="coverPhoto" accept="image/*" />
+
+    <button type="submit" class="upload-btn">Save Changes</button>
+</form>
