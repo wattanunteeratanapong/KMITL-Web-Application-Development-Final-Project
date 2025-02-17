@@ -1,0 +1,113 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Togeta</title>
+    <link rel="stylesheet" href="~/css/profile.css">
+</head>
+
+<body>
+
+    <div id="canvas">
+
+        <div id="navbar">
+            <a href="@Url.Content("~/Home Page/home.html")" id="leftdiv">Togeta</a>
+
+            <div id="rightdiv">
+                <div id="modediv">
+                    <div id="toggle-container" onclick="toggleMode()">
+                        <div id="toggle-circle">
+                            <img id="modeicon" src="sun.png" alt="modeicon">
+                        </div>
+                    </div>
+                </div>
+
+                <a href="@Url.Content("~/Notification Page/notification.html")" id="notidiv">
+                    <img id="noti" src="noti icon.png" alt="notification bell">
+                </a>
+                <a href="@Url.Content("~/Profile Page/profile.html")" id="profilediv">
+                    <img id="profile" src="profile icon.png" alt="profile icon">
+                </a>
+            </div>
+        </div>
+
+        <div id="profilebox">
+
+            <div id="mainprofilediv">
+            </div>
+
+            <div id="contentdiv">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        window.onload = function () {
+            let storedMode = localStorage.getItem("mode");
+
+            if (storedMode === "dark") {
+                document.body.classList.add("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                document.getElementById("modeicon").src = "moon.png";
+            } else {
+                document.body.classList.remove("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                document.getElementById("modeicon").src = "sun.png";
+            }
+        }
+
+        function toggleMode() {
+            let root = document.documentElement;
+            let modeIcon = document.getElementById("modeicon");
+            let storedMode = localStorage.getItem("mode");
+
+            if (storedMode === "dark") {
+                document.body.classList.remove("dark-mode");
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+
+                localStorage.setItem("mode", "light");
+                modeIcon.src = "sun.png";
+            } else {
+                document.body.classList.add("dark-mode");
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+
+                localStorage.setItem("mode", "dark");
+                modeIcon.src = "moon.png";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

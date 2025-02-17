@@ -1,0 +1,444 @@
+/* Landscape */
+
+@media only screen and (orientation: landscape) {
+    /* Universal */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lexend", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+
+    /* Padlet */
+    :root {
+        --padlet-1: #F5ECD5;
+        --padlet-2: #FFFAEC;
+        --padlet-3: #578E7E;
+        --padlet-4: #3D3D3D;
+        --padlet-5: #9AB9AA;
+    }
+
+    .custom-scrollbar {
+        overflow: auto;
+        height: 100%;
+    }
+
+        /* Scrollbar Container */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 15px;
+            height: 8px;
+            background-color: var(--padlet-1);
+            border-radius: 10px;
+        }
+
+        /* Scroll Thumb */
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: var(--padlet-4);
+            border-radius: 10px;
+        }
+
+        /* Scroll Track */
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: var(--padlet-1);
+            border-radius: 10px;
+        }
+
+
+
+
+
+    /* Body */
+    body {
+        background-color: var(--padlet-1);
+    }
+
+    /* Canvas */
+    #canvas {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--padlet-1);
+        width: 100vw;
+        height: 100vh;
+    }
+
+
+
+
+
+    /* Navbar */
+    #navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--padlet-3);
+        width: 100%;
+        height: 7vh;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0px 0px 5px 0px var(--padlet-4);
+        z-index: 2;
+    }
+
+
+
+
+
+    /* Left Div */
+    #leftdiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: #FFFAEC;
+        width: 10vw;
+        height: 100%;
+        font-size: 30px;
+        text-decoration: none;
+    }
+
+
+
+
+
+    /* Middle Div */
+    #middlediv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--padlet-2);
+        width: 40vw;
+        height: 100%;
+    }
+
+
+    /* Categories Div */
+    #categorydiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        height: 100%;
+    }
+
+        #categorydiv:hover {
+            cursor: pointer;
+        }
+
+    #category {
+        height: 35%;
+    }
+
+
+    /* Magnifying Div */
+    #magnifyingdiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        height: 100%;
+    }
+
+    #magnifying {
+        height: 60%;
+    }
+
+        #magnifying:hover {
+            cursor: pointer;
+        }
+
+
+    /* Search Div */
+    #searchdiv {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 80%;
+    }
+
+    #searchbox {
+        display: flex;
+        padding-left: 5%;
+        width: 32vw;
+        height: 5vh;
+        font-size: 20px;
+        border-radius: 30px;
+        background-color: var(--padlet-1);
+        color: var(--padlet-4);
+        border: none;
+    }
+
+        #searchbox:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+
+
+
+
+    /* Right Div */
+    #rightdiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 12vw;
+        height: 100%;
+    }
+
+    #notidiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        height: 100%;
+    }
+
+    #noti {
+        height: 60%;
+    }
+
+    #profilediv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        height: 100%;
+    }
+
+    #profileframe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+    }
+
+    #profile {
+        height: 100%;
+    }
+
+    /* Toggle Button */
+    #modediv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        height: 100%;
+    }
+
+    #toggle-container {
+        width: 50px;
+        height: 32px;
+        background: var(--padlet-2);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 3px;
+        cursor: pointer;
+        position: relative;
+        transition: background 0.3s;
+    }
+
+    #toggle-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 23px;
+        height: 23px;
+        background: var(--padlet-4);
+        border-radius: 50%;
+        position: absolute;
+        left: 3px;
+        transition: left 0.3s, background 0.3s;
+    }
+
+    .dark-mode #toggle-container {
+        background: var(--padlet-4);
+    }
+
+    .dark-mode #toggle-circle {
+        left: 24px;
+        background: var(--padlet-2);
+    }
+
+    #modeicon {
+        height: 80%;
+    }
+
+
+
+
+
+
+
+    /* Filter Box */
+    #filterbox {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: var(--padlet-3);
+        width: 100%;
+        height: 50px;
+        z-index: 0;
+        overflow-x: auto;
+        /* Allow horizontal scrolling */
+        overflow-y: hidden;
+        /* Hide vertical overflow */
+        transform: translateY(-100%);
+        transition: transform 0.5s ease;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        box-shadow: 0px 0px 5px 0px var(--padlet-4);
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scrolling for touch devices */
+        scroll-snap-type: x mandatory;
+        /* Enable snapping */
+    }
+
+        /* Style the horizontal scrollbar */
+        #filterbox::-webkit-scrollbar {
+            height: 8px;
+            width: 80%;
+            /* Height for horizontal scrollbar */
+            background-color: var(--padlet-1);
+            border-radius: 10px;
+        }
+
+        /* Style the scrollbar thumb (the draggable part) */
+        #filterbox::-webkit-scrollbar-thumb {
+            background-color: var(--padlet-4);
+            border-radius: 10px;
+            width: 20px;
+            /* Adjust width of the thumb to make it more proportional */
+        }
+
+        /* Style the scrollbar track (the area the thumb slides on) */
+        #filterbox::-webkit-scrollbar-track {
+            background-color: var(--padlet-1);
+            border-radius: 10px;
+        }
+
+        /* Ensure buttons do not wrap */
+        #filterbox button {
+            margin: 0 10px;
+            /* Space between buttons */
+            flex-shrink: 0;
+            /* Prevent shrinking */
+            scroll-snap-align: start;
+            /* Snap each button to the start */
+        }
+
+    .filter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+
+
+
+    /* Activity Box */
+    #activitybox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--padlet-2);
+        width: 43vw;
+        height: 88vh;
+        border-radius: 50px;
+        overflow: hidden;
+        margin-bottom: 2.5vh;
+    }
+
+
+
+
+
+    /* Activity Container */
+    #activitycontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 95%;
+        height: 95%;
+        overflow-y: auto;
+    }
+
+
+    .activity {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--padlet-1);
+        width: 90%;
+        height: 31%;
+        margin: 1%;
+        border-radius: 20px;
+        flex-shrink: 0;
+        transition: transform 0.8s;
+        
+    }
+
+        .activity:hover {
+            cursor: pointer;
+            transform: scale(1.02);
+            box-shadow: 0px 0px 5px 0px var(--padlet-4);
+        }
+
+
+
+
+
+    #creatediv {
+        position: absolute;
+        top: 90vh;
+        left: 90vw;
+        z-index: 10;
+    }
+
+    #createbutton {
+        width: 105px;
+        height: 55px;
+        background-color: var(--padlet-3);
+        color: var(--padlet-1);
+        border: none;
+        border-radius: 20px;
+    }
+
+        #createbutton:hover {
+            cursor: pointer;
+            background-color: var(--padlet-4);
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Portrait */

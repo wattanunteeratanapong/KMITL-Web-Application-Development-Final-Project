@@ -1,0 +1,203 @@
+﻿@model IEnumerable<Togeta.Models.Event>;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/home.css">
+</head>
+<body>
+
+    <div id="canvas">
+
+        <div id="navbar">
+            <a asp-controller="Home" asp-action="Index" id="leftdiv">Togeta</a>
+
+            <div id="middlediv">
+                <div id="categorydiv">
+                    <img id="category" src="@Url.Content("~/Icon.png")" alt="category icon">
+                </div>
+                <div id="searchdiv">
+                    <form>
+                        <input id="searchbox" type="text" name="search" placeholder="Search ...">
+                    </form>
+                </div>
+                <div id="magnifyingdiv">
+                    <div id="magnifyingdiv" onclick="document.querySelector('form').submit()">
+                        <img id="magnifying" src="@Url.Content("~/search icon.png")" alt="magnifying glass">
+                    </div>
+                </div>
+            </div>
+
+            <div id="rightdiv">
+                <div id="modediv">
+                    <div id="toggle-container" onclick="toggleMode()">
+                        <div id="toggle-circle">
+                            <img id="modeicon" src="@Url.Content("~/sun.png")" alt="modeicon">
+                        </div>
+                    </div>
+                </div>
+
+                <a asp-controller="Notification" asp-action="Index" id="notidiv">
+                    <img id="noti" src="@Url.Content("~/noti icon.png")" alt="notification bell">
+                </a>
+
+                <a asp-controller="Profile" asp-action="Index" id="profilediv">
+                    <div id="profileframe">
+                        <img id="profile" src="@Url.Content("~/profile icon.png")" alt="profile icon">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div id="filterbox">
+            <button class="filter">🎲 Board Games</button>
+            <button class="filter">🏆 Sport</button>
+            <button class="filter">🎮 Video Games</button>
+            <button class="filter">🎶 Music</button>
+            <button class="filter">🎬 Movies & TV Shows</button>
+            <button class="filter">📚 Books & Literature</button>
+            <button class="filter">💻 Technology & Gadgets</button>
+            <button class="filter">💪 Fitness & Health</button>
+            <button class="filter">🍽️ Food & Cooking</button>
+            <button class="filter">✈️ Travel & Adventure</button>
+            <button class="filter">📷 Photography</button>
+            <button class="filter">🎨 Art & Design</button>
+            <button class="filter">📖 Anime & Manga</button>
+            <button class="filter">💄 Fashion & Beauty</button>
+            <button class="filter">✂️ DIY & Crafts</button>
+            <button class="filter">🔬 Science & Space</button>
+            <button class="filter">🐶 Pets & Animals</button>
+            <button class="filter">💰 Finance & Investing</button>
+            <button class="filter">🚗 Cars & Motorcycles</button>
+        </div>
+        <div id="activitybox">
+
+            <div id="activitycontainer" class="custom-scrollbar">
+                  @foreach (var @Event in Model)
+                    {
+                    <a asp-controller="Event" asp-action="DetailEachBox" asp-route-id="@Event.Id" class="activity">
+                        <div>
+                            <h6>name: @Event.Name </h6>
+                            <h6>date time: @Event.DateTime</h6>
+                            <h6> location: @Event.location</h6>
+                            <h6> participant: @Event.Participants </h6>
+                            <h6> tag: @Event.Tag</h6>
+                            <h6> detail: @Event.Detail </h6>
+                            @* <h6> imagepaht:   @Event.Imagepath</h6> *@
+                        </div>
+                        <img src="@Url.Content(@Event.Imagepath)" width="60" height="30" />
+                </a>                 
+                } 
+            </div>
+        </div>
+
+        <div id="creatediv">
+            <button id="createbutton">Create</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        window.onload = function () {
+            let storedMode = localStorage.getItem("mode");
+
+            if (storedMode === "dark") {
+                document.body.classList.add("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                document.getElementById("modeicon").src = "@Url.Content("~/moon.png")";
+            } else {
+                document.body.classList.remove("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                document.getElementById("modeicon").src = "@Url.Content("~/sun.png")";
+            }
+        }
+
+        function toggleMode() {
+            let root = document.documentElement;
+            let modeIcon = document.getElementById("modeicon");
+            let storedMode = localStorage.getItem("mode");
+
+            if (storedMode === "dark") {
+                document.body.classList.remove("dark-mode");
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+
+                localStorage.setItem("mode", "light");
+                modeIcon.src = "@Url.Content("~/sun.png")";
+            } else {
+                document.body.classList.add("dark-mode");
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+
+                localStorage.setItem("mode", "dark");
+                modeIcon.src = "@Url.Content("~/moon.png")";
+            }
+        }
+
+        document.getElementById("categorydiv").addEventListener("click", function () {
+                let filterBox = document.getElementById("filterbox");
+                let navbar = document.getElementById("navbar");
+
+                if (filterBox.classList.contains("show")) {
+                    // Slide the filter box up
+                    filterBox.style.transform = "translateY(-100%)";
+
+                    setTimeout(() => {
+                        filterBox.classList.remove("show");
+                        filterBox.style.zIndex = "-1"; // Send the filter box below the navbar
+
+                        // Restore navbar border radius after the slide-up
+                        navbar.style.borderBottomLeftRadius = "20px";
+                        navbar.style.borderBottomRightRadius = "20px";
+
+                        // Restore navbar box-shadow after the slide-up
+                        navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+                    }, 300); // Timeout duration matches the slide-up transition duration
+                } else {
+                    // Show the filter box and slide it down
+                    filterBox.classList.add("show");
+                    filterBox.style.transform = "translateY(0)";
+                    filterBox.style.zIndex = "1"; // Bring the filter box above the navbar
+
+                    // Remove navbar border radius and box-shadow immediately
+                    navbar.style.borderBottomLeftRadius = "0";
+                    navbar.style.borderBottomRightRadius = "0";
+                    navbar.style.boxShadow = "none";
+                }
+            });
+            document.getElementById("createbutton").addEventListener("click", function() {
+            window.location.href = "/Event/Index";
+        });
+    </script>
+
+</body>
+</html>

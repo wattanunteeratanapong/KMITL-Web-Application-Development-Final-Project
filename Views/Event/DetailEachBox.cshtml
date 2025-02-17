@@ -1,0 +1,38 @@
+﻿@model Togeta.Models.Event
+
+
+@{
+    Layout = null;
+}
+
+
+<a href="@Url.Action("Index", "Home")">Back Home</a>
+
+
+    <div>
+    @{
+        var encodedLocation = Uri.EscapeDataString(Model.location);
+    }
+    <a href="https://www.google.co.th/maps/search/@encodedLocation" target="_blank">
+        Go to location
+    </a>
+
+
+        <p>name: @Model.Name </p>
+
+        <p>date time: @Model.DateTime</p>
+
+        <p> location: @Model.location</p>
+        <p> participant: @Model.Participants </p>
+        <p> tag: @Model.Tag</p>
+        <p> detail: @Model.Detail </p>
+        @* <p> imagepaht:   @Model.Imagepath</p> *@
+        @* <p> imagepaht:   @Model.Imagepath</p> *@
+        <img src="@Url.Content(@Model.Imagepath)" />
+    </div>
+
+
+
+
+
+

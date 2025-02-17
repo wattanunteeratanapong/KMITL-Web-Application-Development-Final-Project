@@ -1,0 +1,321 @@
+﻿/* Landscape */
+
+@media only screen and (orientation: landscape) {
+    /* Universal */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lexend", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+
+    /* Padlet */
+    :root {
+        --padlet-1: #F5ECD5;
+        --padlet-2: #FFFAEC;
+        --padlet-3: #578E7E;
+        --padlet-4: #3D3D3D;
+        --padlet-5: #9AB9AA;
+    }
+
+    .custom-scrollbar {
+        overflow: auto;
+        height: 100%;
+    }
+
+        /* Scrollbar Container */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 15px;
+            height: 8px;
+            background-color: var(--padlet-1);
+            border-radius: 10px;
+        }
+
+        /* Scroll Thumb */
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: var(--padlet-4);
+            border-radius: 10px;
+        }
+
+        /* Scroll Track */
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: var(--padlet-1);
+            border-radius: 10px;
+        }
+
+
+
+
+
+    /* Body */
+    body {
+        background-color: var(--padlet-1);
+    }
+
+    /* Canvas */
+    #canvas {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--padlet-1);
+        width: 100vw;
+        height: 100vh;
+    }
+
+
+
+
+
+    /* Navbar */
+    #navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--padlet-3);
+        width: 100%;
+        height: 7vh;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0px 0px 5px 0px var(--padlet-4);
+    }
+
+
+
+
+
+    /* Left Div */
+    #leftdiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: #FFFAEC;
+        width: 10vw;
+        height: 100%;
+        font-size: 30px;
+        text-decoration: none;
+    }
+
+
+
+
+
+    /* Middle Div */
+    #middlediv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--padlet-2);
+        width: 40vw;
+        height: 100%;
+    }
+
+
+    /* Categories Div */
+    #categorydiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        height: 100%;
+    }
+
+    #category {
+        height: 35%;
+    }
+
+
+    /* Magnifying Div */
+    #magnifyingdiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        height: 100%;
+    }
+
+    #magnifying {
+        height: 60%;
+    }
+
+        #magnifying:hover {
+            cursor: pointer;
+        }
+
+
+    /* Search Div */
+    #searchdiv {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 80%;
+    }
+
+    #searchbox {
+        display: flex;
+        padding-left: 5%;
+        width: 32vw;
+        height: 5vh;
+        font-size: 20px;
+        border-radius: 30px;
+        background-color: var(--padlet-1);
+        color: var(--padlet-4);
+        border: none;
+    }
+
+        #searchbox:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+
+
+
+
+    /* Right Div */
+    #rightdiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 12vw;
+        height: 100%;
+    }
+
+    #notidiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        height: 100%;
+    }
+
+    #noti {
+        height: 60%;
+    }
+
+    #profilediv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        height: 100%;
+    }
+
+    #profile {
+        height: 70%;
+    }
+
+    /* Toggle Button */
+    #modediv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        height: 100%;
+    }
+
+    #toggle-container {
+        width: 50px;
+        height: 32px;
+        background: var(--padlet-2);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 3px;
+        cursor: pointer;
+        position: relative;
+        transition: background 0.3s;
+    }
+
+    #toggle-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 23px;
+        height: 23px;
+        background: var(--padlet-4);
+        border-radius: 50%;
+        position: absolute;
+        left: 3px;
+        transition: left 0.3s, background 0.3s;
+    }
+
+    .dark-mode #toggle-container {
+        background: var(--padlet-4);
+    }
+
+    .dark-mode #toggle-circle {
+        left: 24px;
+        background: var(--padlet-2);
+    }
+
+    #modeicon {
+        height: 80%;
+    }
+
+
+
+
+
+
+
+
+    /* Activity Box */
+    #profilebox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--padlet-2);
+        width: 55vw;
+        height: 88vh;
+        border-radius: 50px;
+        overflow: hidden;
+        margin-bottom: 2.5vh;
+    }
+
+    #mainprofilediv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+        background-color: #E3E3E3;
+    }
+
+    #contentdiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Portrait */

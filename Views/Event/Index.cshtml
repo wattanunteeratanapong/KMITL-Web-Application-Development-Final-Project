@@ -1,0 +1,137 @@
+﻿@model Togeta.Models.Event
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Web Name</title>
+    <link rel="stylesheet" href="~/css/Event.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+
+<body>
+    <div id="signupcanvas">
+        <div id="eventbox">
+
+            <div id="eventtext">
+                Create Event !!!
+            </div>
+
+            <form method="post" asp-controller="Event" asp-action="Create" id="signupForm" enctype="multipart/form-data">
+                <div id="eventboxinputbox">
+                    <input type="text" id="eventnameinput" asp-for="Name" placeholder="event name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div id="datetimebox">
+                    <input type="datetime-local" id="datetime" asp-for="DateTime" placeholder="date time" />
+                    <span asp-validation-for="DateTime" class="text-danger"></span>
+                </div>
+
+                <div id="locationbox">
+                    <input type="text" id="location" asp-for="location" placeholder="location" />
+                    <span asp-validation-for="location" class="text-danger"></span>
+                </div>
+
+
+                <div id="participantbox">
+                    <input type="number" id="participant" asp-for="Participants" placeholder="participants" />
+                    <span asp-validation-for="Participants" class="text-danger"></span>
+                </div>
+                <div id="tagbox">
+                    <select id="tag" asp-for="Tag">
+                        <option value="" selected hidden>tag</option>
+                        <option value="Board Games">Board Games</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Video Games">Video Games</option>
+                        <option value="Music">Music</option>
+                        <option value="Movies & TV Shows">Movies & TV Shows</option>
+                        <option value="Books & Literature">Books & Literature</option>
+                        <option value="Technology & Gadgets">Technology & Gadgets</option>
+                        <option value="Fitness & Health">Fitness & Health</option>
+                        <option value="Food & Cooking">Food & Cooking</option>
+                        <option value="Travel & Adventure">Travel & Adventure</option>
+                        <option value="Photography">Photography</option>
+                        <option value="Art & Design">Art & Design</option>
+                        <option value="Anime & Manga">Anime & Manga</option>
+                        <option value="Fashion & Beauty">Fashion & Beauty</option>
+                        <option value="DIY & Crafts">DIY & Crafts</option>
+                        <option value="Science & Space">Science & Space</option>
+                        <option value="Pets & Animals">Pets & Animals</option>
+                        <option value="Finance & Investing">Finance & Investing</option>
+                        <option value="Cars & Motocycles">Cars & Motocycles</option>
+                    </select>
+                    @* <span asp-validation-for="Tag" class="text-danger"></span> *@
+                </div>
+
+                <div id="detailbox">
+                    <input type="text" id="detail" asp-for="Detail" placeholder="details" />
+                    <span asp-validation-for="Detail" class="text-danger"></span>
+                </div>
+
+                <div id="imagebox">
+                    <input type="file" id="image" asp-for="ImageFile" accept="image/*" onchange="updateLabel(this)" hidden />
+                    
+                   
+                    <label for="image" id="imagelabel">upload image</label>
+                    @* <span asp-validation-for="Username" class="text-danger"></span> *@
+                </div>
+
+
+
+
+
+
+                <div id="bottombox">
+                    @if (ViewData["UsernameError"] != null)
+                    {
+                        <div style="color: red; margin-bottom: 1vh">
+                            @ViewData["UsernameError"]
+                        </div>
+                    }
+                    <div id="createeventbutton">
+                        <button type="submit" id="signinbutton">Create Event</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    @* Enable client-side validation *@
+    @* <script> *@
+    @*             document.getElementById("createeventbutton").addEventListener("click", function() { *@
+    @*         window.location.href = "/Event/Detail"; *@
+    @*     }); *@
+
+    @* </script> *@
+    <script>
+        function updateLabel(input) {
+            let label = document.getElementById("imagelabel");
+
+            if (input.files.length > 0) {
+                label.textContent = input.files[0].name; // Update label with file name
+            } else {
+                label.textContent = "Choose an Image"; // Reset label if no file is selected
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    @* <script src="~/js/signup.js"></script> *@
+
+
+
+</body>
+</html>

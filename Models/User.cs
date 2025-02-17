@@ -3,7 +3,6 @@ namespace Togeta.Models
     public class User
     {
         public int Id { get; set; }
-
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
         public required string Username { get; set; }
@@ -13,6 +12,6 @@ namespace Togeta.Models
         public required string Gender { get; set; }
 
         public string? RequestId { get; set; }
-        public bool ShowRequestId { get; set; } = false; 
+        public bool ShowRequestId { get; set; } = false;
     }
 }

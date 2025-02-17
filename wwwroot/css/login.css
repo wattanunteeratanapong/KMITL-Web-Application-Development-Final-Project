@@ -53,6 +53,7 @@ body {
         width: 40vw;
         height: 80vh;
         border-radius: 5%;
+        margin-bottom: 2%;
     }
 }
 
@@ -100,7 +101,6 @@ body {
 
 #websitenamebox {
     font-size: 50px;
-    font-style: italic;
     font-weight: 900;
     color: var(--padlet-3);
     margin-bottom: 7%;
@@ -242,3 +242,8 @@ body {
         color: var(--padlet-4);
         cursor: pointer;
     }
+
+
+
+
+

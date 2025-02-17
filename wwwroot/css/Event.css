@@ -1,0 +1,517 @@
+﻿/* Universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Body */
+body {
+    background-color: var(--padlet-1);
+}
+
+.text-danger {
+    display: none;
+}
+
+
+
+
+/* Padlet */
+:root {
+    --padlet-1: #F5ECD5;
+    --padlet-2: #FFFAEC;
+    --padlet-3: #578E7E;
+    --padlet-4: #3D3D3D;
+    --padlet-5: #9AB9AA;
+    /* --padlet-1: white;
+    --padlet-2: #4CC9FE;
+    --padlet-3: yellow;
+    --padlet-4: #FFFECB; */
+}
+
+/* Variables */
+:root {
+    --width1: 180%;
+    --margin1: -40%;
+    --margin2: 3vh;
+    --padding1: 6%;
+    --blockheight: 4.5vh;
+}
+
+
+
+
+
+/* Canvas */
+#signupcanvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--padlet-1);
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+
+
+/* Sign Up Box */
+/* width > 1350 */
+@media screen and (min-width: 1350px) {
+    #eventbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--padlet-2);
+        width: 40vw;
+        height: 90vh;
+        border-radius: 5%;
+    }
+}
+
+/* 1100 < width < 1350 */
+@media screen and (max-width: 1350px) and (min-width: 900px) {
+    #eventbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--padlet-2);
+        width: 50vw;
+        height: 90vh;
+        border-radius: 5%;
+    }
+}
+
+/* 700 < width < 1100 */
+@media screen and (max-width: 900px) {
+    #eventbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--padlet-2);
+        width: 70vw;
+        height: 90vh;
+        border-radius: 5%;
+    }
+}
+
+/* width < 700 */
+@media screen and (max-width: 700px) {
+    #eventbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--padlet-2);
+        width: 90vw;
+        height: 90vh;
+        border-radius: 5%;
+    }
+}
+
+#eventtext {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--padlet-4);
+    margin-bottom: 4%;
+}
+
+
+
+
+
+/* Firstname Box */
+#eventboxinputbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: var(--width1);
+    height: var(--blockheight);
+    margin-bottom: var(--margin2);
+    margin-left: var(--margin1);
+}
+
+#eventnameinput {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--padlet-1);
+    color: var(--padlet-4);
+    text-align: left;
+    padding-left: var(--padding1);
+}
+
+    #eventnameinput::placeholder {
+        color: var(--padlet-4);
+    }
+
+    #eventnameinput:focus {
+        outline: none;
+        background-color: var(--padlet-3);
+        color: var(--padlet-2);
+    }
+
+        #eventnameinput:focus::placeholder {
+            color: var(--padlet-2);
+        }
+
+
+
+
+
+/* Lastname Box */
+#locationbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: var(--width1);
+    height: var(--blockheight);
+    margin-bottom: var(--margin2);
+    margin-left: var(--margin1);
+}
+
+#location {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--padlet-1);
+    color: var(--padlet-4);
+    text-align: left;
+    padding-left: var(--padding1);
+}
+
+    #location::placeholder {
+        color: var(--padlet-4);
+    }
+
+    #location:focus {
+        outline: none;
+        background-color: var(--padlet-3);
+        color: var(--padlet-2);
+    }
+
+        #location:focus::placeholder {
+            color: var(--padlet-2);
+        }
+
+
+
+
+
+/* Birthdate Box */
+#datetimebox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: var(--width1);
+    height: var(--blockheight);
+    margin-bottom: var(--margin2);
+    margin-left: var(--margin1);
+}
+
+#datetime {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--padlet-1);
+    color: var(--padlet-4);
+    text-align: left;
+    padding-left: var(--padding1);
+}
+
+    #datetime::placeholder {
+        color: var(--padlet-4);
+    }
+
+    #datetime:focus {
+        outline: none;
+        background-color: var(--padlet-3);
+        color: var(--padlet-2);
+    }
+
+        #datetime:focus::placeholder {
+            color: var(--padlet-2);
+        }
+
+
+
+
+
+/* Gender Box (Drop Down)*/
+#tagbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: var(--width1);
+    height: var(--blockheight);
+    margin-bottom: var(--margin2);
+    margin-left: var(--margin1);
+}
+
+#tag {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--padlet-1);
+    color: var(--padlet-4);
+    text-align: left;
+    padding-left: var(--padding1);
+}
+
+    #tag::placeholder {
+        color: var(--padlet-4);
+    }
+
+    #tag:focus {
+        outline: none;
+        background-color: var(--padlet-3);
+        color: var(--padlet-2);
+    }
+
+        #tag:focus::placeholder {
+            color: var(--padlet-2);
+        }
+
+
+
+
+
+/* Email Box */
+#detailbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: var(--width1);
+    height: var(--blockheight);
+    margin-bottom: var(--margin2);
+    margin-left: var(--margin1);
+}
+
+#detail {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--padlet-1);
+    color: var(--padlet-4);
+    text-align: left;
+    padding-left: var(--padding1);
+}
+
+    #detail::placeholder {
+        color: var(--padlet-4);
+    }
+
+    #detail:focus {
+        outline: none;
+        background-color: var(--padlet-3);
+        color: var(--padlet-2);
+    }
+
+        #detail:focus::placeholder {
+            color: var(--padlet-2);
+        }
+
+
+
+
+
+/* Username Box */
+#imagebox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: var(--width1);
+    height: var(--blockheight);
+    margin-bottom: var(--margin2);
+    margin-left: var(--margin1);
+}
+#image {
+    display: none;
+}
+#imagelabel {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--padlet-1);
+    color: var(--padlet-4);
+    text-align: left;
+    padding-left: var(--padding1);
+
+}
+
+    #imagelabel:hover {
+        background-color: var(--padlet-3, #ccc);
+        color: var(--padlet-2, #222);
+    }
+
+
+
+
+
+
+
+/* Password Box */
+#participantbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: var(--width1);
+    height: var(--blockheight);
+    margin-bottom: var(--margin2);
+    margin-left: var(--margin1);
+}
+
+#participant {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--padlet-1);
+    color: var(--padlet-4);
+    text-align: left;
+    padding-left: var(--padding1);
+}
+
+    #participant::placeholder {
+        color: var(--padlet-4);
+    }
+
+    #participant:focus {
+        outline: none;
+        background-color: var(--padlet-3);
+        color: var(--padlet-2);
+    }
+
+        #participant:focus::placeholder {
+            color: var(--padlet-2);
+        }
+
+
+
+
+
+/* Confirm Password Box */
+#confirmpasswordboxinput {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: var(--width1);
+    height: var(--blockheight);
+    margin-bottom: 2vh;
+    margin-left: var(--margin1);
+}
+
+#confirmpasswordinput {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--padlet-1);
+    color: var(--padlet-4);
+    text-align: left;
+    padding-left: var(--padding1);
+}
+
+    #confirmpasswordinput::placeholder {
+        color: var(--padlet-4);
+    }
+
+    #confirmpasswordinput:focus {
+        outline: none;
+        background-color: var(--padlet-3);
+        color: var(--padlet-2);
+    }
+
+        #confirmpasswordinput:focus::placeholder {
+            color: var(--padlet-2);
+        }
+
+
+
+
+
+
+/* Login Box */
+#loginbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-left: -35%;
+    width: 120%;
+}
+
+#loginlink {
+    color: var(--padlet-3);
+    text-decoration: none;
+    font-weight: 800;
+    padding-left: 5%;
+}
+
+
+
+
+
+/* Bottom Box */
+#bottombox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+
+
+
+
+/* Sign In Box */
+#signinbox {
+    margin-left: 10%;
+}
+
+#signinbutton {
+    width: 80%;
+    height: 6vh;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--padlet-3);
+    color: var(--padlet-2);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+    #signinbutton:hover {
+        background-color: var(--padlet-5);
+        color: var(--padlet-4);
+        cursor: pointer;
+    }

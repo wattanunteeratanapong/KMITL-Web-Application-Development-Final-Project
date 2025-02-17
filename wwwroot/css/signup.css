@@ -13,6 +13,9 @@ body {
     background-color: var(--padlet-1);
 }
 
+.text-danger {
+    display: none;
+}
 
 
 
@@ -32,11 +35,11 @@ body {
 
 /* Variables */
 :root {
-    --width1: 200%;
-    --margin1: -47%;
+    --width1: 180%;
+    --margin1: -40%;
     --margin2: 3vh;
     --padding1: 6%;
-    --blockheight: 5vh;
+    --blockheight: 4.5vh;
 }
 
 
@@ -115,7 +118,7 @@ body {
 }
 
 #signuptext {
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 500;
     color: var(--padlet-4);
     margin-bottom: 4%;
@@ -139,10 +142,10 @@ body {
 #firstnameinput {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     background-color: var(--padlet-1);
     color: var(--padlet-4);
     text-align: left;
@@ -181,10 +184,10 @@ body {
 #lastnameinput {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     background-color: var(--padlet-1);
     color: var(--padlet-4);
     text-align: left;
@@ -223,10 +226,10 @@ body {
 #birthdateinput {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     background-color: var(--padlet-1);
     color: var(--padlet-4);
     text-align: left;
@@ -265,10 +268,10 @@ body {
 #genderinput {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     background-color: var(--padlet-1);
     color: var(--padlet-4);
     text-align: left;
@@ -293,6 +296,48 @@ body {
 
 
 
+/* Email Box */
+#emailboxinputbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: var(--width1);
+    height: var(--blockheight);
+    margin-bottom: var(--margin2);
+    margin-left: var(--margin1);
+}
+
+#emailinput {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--padlet-1);
+    color: var(--padlet-4);
+    text-align: left;
+    padding-left: var(--padding1);
+}
+
+    #emailinput::placeholder {
+        color: var(--padlet-4);
+    }
+
+    #emailinput:focus {
+        outline: none;
+        background-color: var(--padlet-3);
+        color: var(--padlet-2);
+    }
+
+        #emailinput:focus::placeholder {
+            color: var(--padlet-2);
+        }
+
+
+
+
+
 /* Username Box */
 #usernameboxinputbox {
     display: flex;
@@ -307,10 +352,10 @@ body {
 #usernameinput {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     background-color: var(--padlet-1);
     color: var(--padlet-4);
     text-align: left;
@@ -349,10 +394,10 @@ body {
 #passwordinput {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     background-color: var(--padlet-1);
     color: var(--padlet-4);
     text-align: left;
@@ -391,10 +436,10 @@ body {
 #confirmpasswordinput {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     background-color: var(--padlet-1);
     color: var(--padlet-4);
     text-align: left;
@@ -441,20 +486,31 @@ body {
 
 
 
+/* Bottom Box */
+#bottombox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+
+
+
+
 /* Sign In Box */
 #signinbox {
-    margin-top: 6vh;
     margin-left: 10%;
 }
 
 #signinbutton {
     width: 80%;
     height: 6vh;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
     background-color: var(--padlet-3);
     color: var(--padlet-2);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
 }
 
@@ -463,3 +519,8 @@ body {
         color: var(--padlet-4);
         cursor: pointer;
     }
+
+
+
+
+

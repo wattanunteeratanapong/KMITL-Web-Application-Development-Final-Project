@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Togeta.Data;
 using Togeta.Services;
 
@@ -14,6 +14,12 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 // Register services (e.g., IUserService and its implementation)
 builder.Services.AddScoped<IUserService, UserService>();
 
+// Enable session management
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
+});
+
 var app = builder.Build();
 
 // Middleware configuration
@@ -23,13 +29,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseSession(); // Use session middleware
 app.UseHttpsRedirection();
-app.UseStaticFiles(); // Serve static files
+app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthorization();
 
-// Map controller routes
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Login}/{action=Index}/{id?}");

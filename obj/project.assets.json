@@ -7673,23 +7673,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\watta\\.nuget\\packages\\": {},
+    "C:\\Users\\kinga\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta\\Togeta\\Togeta.csproj",
+      "projectUniqueName": "C:\\Users\\kinga\\source\\repos\\togeta\\Togeta.csproj",
       "projectName": "Togeta",
-      "projectPath": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta\\Togeta\\Togeta.csproj",
-      "packagesPath": "C:\\Users\\watta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta\\Togeta\\obj\\",
+      "projectPath": "C:\\Users\\kinga\\source\\repos\\togeta\\Togeta.csproj",
+      "packagesPath": "C:\\Users\\kinga\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kinga\\source\\repos\\togeta\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\watta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kinga\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7698,6 +7698,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
