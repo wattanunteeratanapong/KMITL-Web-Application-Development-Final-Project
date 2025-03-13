@@ -1,0 +1,120 @@
+﻿@model Togeta.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Togeta</title>
+    <link rel="stylesheet" href="~/css/signup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+    <div id="signupcanvas">
+        
+
+        <div id="signupbox">
+            <div id="signuptext">Sign Up</div>
+
+            <form id="formbox" method="post" asp-controller="Signup" asp-action="Register">
+                
+                <div class="inputGroup">
+                    <label>Firstname</label>
+                    <input type="text" id="firstnameinput" asp-for="FirstName"/>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label>Lastname</label>
+                    <input type="text" id="lastnameinput" asp-for="LastName"/>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label>Birthdate</label>
+                    <input type="date" id="birthdateinput" asp-for="BirthDate"/>
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label>Gender</label>
+                    <select id="genderinput" asp-for="Gender">
+                        <option value="" selected hidden></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label>Email</label>
+                    <input type="email" id="emailinput" asp-for="Email"/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label>Username</label>
+                    <input type="text" id="usernameinput" asp-for="Username"/>
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label>Password</label>
+                    <input type="password" id="passwordinput" asp-for="Password"/>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmpasswordinput" name="ConfirmPassword"/>
+                    <span class="text-danger">@ViewData["ConfirmPasswordError"]</span>
+                </div>
+
+                <div class="inputGroupRow">
+                    Already have an account? &nbsp;
+                    <a asp-controller="Login" asp-action="Index" id="loginlink"> Login </a>
+                </div>
+
+
+                <div id="bottombox">
+                    @if (ViewData["UsernameError"] != null)
+                    {
+                        <div style="color: red; margin-bottom: 1vh">
+                            @ViewData["UsernameError"]
+                        </div>
+                    }
+                    <div id="signinbox">
+                        <button class="updateBtn" type="submit" id="signinbutton">Sign Up</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        
+
+    </div>
+
+    @* Enable client-side validation *@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    <script src="@Url.Content("~/js/signup.js")"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,718 @@
+﻿@model IEnumerable<Togeta.Models.Event>
+
+@{
+    Layout = null;
+}
+
+@functions {
+    string GetTagColor(string tag)
+    {
+        switch (tag)
+        {
+            case "📖 Anime & Manga": return "#D9A25F";
+            case "🎨 Art & Design": return "#89B0A5";
+            case "🎲 Board Games": return "#6D5B95";
+            case "📚 Books & Literature": return "#3D3D3D";
+            case "🚗 Cars & Motorcycles": return "#D9A25F";
+            case "✂️ DIY & Crafts": return "#89B0A5";
+            case "💄 Fashion & Beauty": return "#6D5B95";
+            case "💰 Finance & Investing": return "#3D3D3D";
+            case "💪 Fitness & Health": return "#D9A25F";
+            case "🍽️ Food & Cooking": return "#89B0A5";
+            case "🎬 Movies & TV Shows": return "#6D5B95";
+            case "🎶 Music": return "#3D3D3D";
+            case "🐶 Pets & Animals": return "#D9A25F";
+            case "📷 Photography": return "#89B0A5";
+            case "🔬 Science & Space": return "#6D5B95";
+            case "🏆 Sport": return "#3D3D3D";
+            case "💻 Technology & Gadgets": return "#D9A25F";
+            case "✈️ Travel & Adventure": return "#89B0A5";
+            case "🎮 Video Games": return "#6D5B95";
+            default: return "#CCCCCC";
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="~/css/notifications.css?v=@DateTime.Now.Ticks">
+    <link rel="stylesheet" href="~/css/home.css?v=@DateTime.Now.Ticks">
+    <link rel="stylesheet" href="~/css/calendar.css?v=@DateTime.Now.Ticks">
+    <link rel="stylesheet" href="~/css/recommendedBox.css">
+
+    <title>Togeta</title>
+</head>
+
+<body>
+    <div id="canvas">
+        <!-- ================= NAVBAR ================= -->
+        <div id="navbar">
+            <a asp-controller="Home" asp-action="Index" id="leftdiv">Togeta</a>
+            <div id="middlediv">
+                <div id="categorydiv">
+                    <img id="category" src="@Url.Content("~/Icon.png")" alt="category icon">
+                </div>
+                <div id="searchdiv">
+                    <form id="searchForm" method="get" action="@Url.Action("Index", "Home")">
+                        <input type="hidden" name="category" id="categoryInput"
+                            value="@ViewContext.HttpContext.Request.Query["category"]" />
+                        <input id="searchbox" type="text" name="search" placeholder="Search ..."
+                            value="@ViewContext.HttpContext.Request.Query["search"]" />
+                        <!-- Filter chip with clear (x) button -->
+                        <span id="tagChip">
+                            <span id="chipText"></span>
+                            <button type="button" id="removeTagBtn" onclick="clearFilter()"
+                                style="margin-left: 4px; border:none; background:transparent; cursor:pointer; color: #FFFAEC;">X</button>
+                        </span>
+                    </form>
+                </div>
+                <div id="magnifyingdiv" onclick="document.getElementById('searchForm').submit()">
+                    <img id="magnifying" src="@Url.Content("~/search icon.png")" alt="magnifying glass">
+                </div>
+            </div>
+            <div id="rightdiv">
+                <div id="modediv">
+                    <div id="toggle-container" onclick="toggleMode()">
+                        <div id="toggle-circle">
+                            <img id="modeicon" src="@Url.Content("~/sun.png")" alt="modeicon">
+                        </div>
+                    </div>
+                </div>
+                <div id="notification-container">
+                    <a href="javascript:void(0)" id="notidiv" onclick="toggleNotifications()">
+                        <img id="noti" src="~/noti icon.png" alt="notification bell">
+                    </a>
+                    <!-- Notification Dropdown -->
+                    <div id="notification-dropdown" class="hidden">
+                        <h4>Notifications</h4>
+                        <ul id="notification-list">
+                        </ul>
+                        <div class="notification-actions">
+                            <button id="mark-read-btn" class="notification-btn">Mark as Read</button>
+                            <button id="clear-btn" class="notification-btn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                <a asp-controller="Profile" asp-action="Index" id="profilediv">
+                    <div id="profileframe">
+                        <img id="profile" src="@Url.Content($"{ViewData["ProfileImage"]}")" alt="profile icon"
+                            onerror="this.src='@Url.Content("~/profile icon.png")'" />
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- ============== END NAVBAR ============== -->
+
+        <!-- FILTER BOX (Category Buttons) -->
+        <div id="filterbox">
+            <button class="filter" style="background-color: #D9A25F;"
+                onclick="filterByCategory('📖 Anime & Manga', '#D9A25F')">📖 Anime & Manga</button>
+            <button class="filter" style="background-color: #89B0A5;"
+                onclick="filterByCategory('🎨 Art & Design', '#89B0A5')">🎨 Art & Design</button>
+            <button class="filter" style="background-color: #6D5B95;"
+                onclick="filterByCategory('🎲 Board Games', '#6D5B95')">🎲 Board Games</button>
+            <button class="filter" style="background-color: #3D3D3D;"
+                onclick="filterByCategory('📚 Books & Literature', '#3D3D3D')">📚 Books & Literature</button>
+            <button class="filter" style="background-color: #D9A25F;"
+                onclick="filterByCategory('🚗 Cars & Motorcycles', '#D9A25F')">🚗 Cars & Motorcycles</button>
+            <button class="filter" style="background-color: #89B0A5;"
+                onclick="filterByCategory('✂️ DIY & Crafts', '#89B0A5')">✂️ DIY & Crafts</button>
+            <button class="filter" style="background-color: #6D5B95;"
+                onclick="filterByCategory('💄 Fashion & Beauty', '#6D5B95')">💄 Fashion & Beauty</button>
+            <button class="filter" style="background-color: #3D3D3D;"
+                onclick="filterByCategory('💰 Finance & Investing', '#3D3D3D')">💰 Finance & Investing</button>
+            <button class="filter" style="background-color: #D9A25F;"
+                onclick="filterByCategory('💪 Fitness & Health', '#D9A25F')">💪 Fitness & Health</button>
+            <button class="filter" style="background-color: #89B0A5;"
+                onclick="filterByCategory('🍽️ Food & Cooking', '#89B0A5')">🍽️ Food & Cooking</button>
+            <button class="filter" style="background-color: #6D5B95;"
+                onclick="filterByCategory('🎬 Movies & TV Shows', '#6D5B95')">🎬 Movies & TV Shows</button>
+            <button class="filter" style="background-color: #3D3D3D;"
+                onclick="filterByCategory('🎶 Music', '#3D3D3D')">🎶 Music</button>
+            <button class="filter" style="background-color: #D9A25F;"
+                onclick="filterByCategory('🐶 Pets & Animals', '#D9A25F')">🐶 Pets & Animals</button>
+            <button class="filter" style="background-color: #89B0A5;"
+                onclick="filterByCategory('📷 Photography', '#89B0A5')">📷 Photography</button>
+            <button class="filter" style="background-color: #6D5B95;"
+                onclick="filterByCategory('🔬 Science & Space', '#6D5B95')">🔬 Science & Space</button>
+            <button class="filter" style="background-color: #3D3D3D;"
+                onclick="filterByCategory('🏆 Sport', '#3D3D3D')">🏆 Sport</button>
+            <button class="filter" style="background-color: #D9A25F;"
+                onclick="filterByCategory('💻 Technology & Gadgets', '#D9A25F')">💻 Technology & Gadgets</button>
+            <button class="filter" style="background-color: #89B0A5;"
+                onclick="filterByCategory('✈️ Travel & Adventure', '#89B0A5')">✈️ Travel & Adventure</button>
+            <button class="filter" style="background-color: #6D5B95;"
+                onclick="filterByCategory('🎮 Video Games', '#6D5B95')">🎮 Video Games</button>
+        </div>
+
+        <!-- MAIN CONTENT: Two Columns -->
+        <div id="contentRow">
+            <!-- LEFT COLUMN: Calendar -->
+            <div id="calendarContainer">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <span id="prevMonth" class="nav-btn">&#10094;</span>
+                        <span id="monthYear" class="month-year"></span>
+                        <span id="nextMonth" class="nav-btn">&#10095;</span>
+                    </div>
+                    <div class="calendar-body" id="calendarBody">
+                        <!-- Calendar days injected by JS -->
+                    </div>
+                </div>
+                <!-- SCHEDULED EVENTS BOX -->
+                <div id="scheduleBox" class="scheduled-events custom-scrollbar">
+                    <div class="title">Your Scheduled Events</div>
+                    <div id="scheduledEventsList"><!-- Filled by loadUserEventsForDate() --></div>
+                </div>
+            </div>
+
+            <!-- MIDDLE COLUMN: All Events (Activity Box) -->
+            <div id="activitybox">
+                <div class="activitycontainer custom-scrollbar">
+                    @foreach (var Event in Model)
+                    {
+                        var joinedCount = 0;
+                        if (ViewBag.EventUsers != null)
+                        {
+                            foreach (var eventUser in ViewBag.EventUsers)
+                            {
+                                if (eventUser.EventId == Event.Id)
+                                {
+                                    joinedCount++;
+                                }
+                            }
+                        }
+                        <a asp-controller="Event" asp-action="DetailEachBox" asp-route-id="@Event.Id" class="activity">
+                            <div class="upbar">
+                                <div class="tag" style="background-color: @(GetTagColor(@Event.Tag));">
+                                    @Event.Tag&nbsp;&nbsp;
+                                </div>
+                                <div class="paticipantdiv">
+                                    <img class="paticipantimage" src="@Url.Content("~/paticipantlogo.png")" />
+                                    <div class="paticipant"> Participant: @joinedCount / @Event.Participants </div>
+                                </div>
+                            </div>
+                            <div class="contentdiv">
+                                <div class="detaildiv">
+                                    <div class="activityname">@Event.Name</div>
+                                    <div class="activitydate">
+                                        @Event.StartDateTime.ToString("dd/MM/yyyy HH:mm") -
+                                        @Event.EndDateTime.ToString("dd/MM/yyyy HH:mm")
+                                    </div>
+                                    <div class="activitydescription">@Event.Detail</div>
+                                </div>
+                                <div class="activityimagediv">
+                                    <img class="activityimage"
+                                        src="@Url.Content($"~/uploads/{System.IO.Path.GetFileName(@Event.Imagepath)}")"
+                                        onerror="this.src='@Url.Content("~/uploads/default-cover.png")'" />
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Recommended, Near Full, and Near Closed -->
+            <div id="rightColumn">
+                <div id="recommendationBox" class="scheduled-events custom-scrollbar">
+                    <div class="title">Recommended Events</div>
+                    <div id="recommendedList"></div>
+                </div>
+                <div id="expiringBox" class="scheduled-events custom-scrollbar">
+                    <div class="title">Near Full Events</div>
+                    <div id="expiringList"></div>
+                </div>
+                <div id="closingBox" class="scheduled-events custom-scrollbar">
+                    <div class="title">Near Closed Events</div>
+                    <div id="closingList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CREATE BUTTON -->
+        <div id="creatediv">
+            <button id="createbutton">Create</button>
+        </div>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+        // Global variables to track selected date and category (tag)
+        let currentDate = "";
+        let currentTag = "";
+
+        // [ADDED] - Immediately fetch category-filtered events via AJAX
+        function filterEventsByCategory(category) {
+            // Get the current search keyword from the search input
+            let searchValue = document.getElementById("searchbox").value;
+            // Build the URL with both parameters:
+            let url = `/Home/SearchEvents?query=${encodeURIComponent(searchValue)}&tag=${encodeURIComponent(category)}`;
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not OK");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Expecting JSON { events: [...] }
+                    renderFilteredEvents(data.events);
+                })
+                .catch(err => console.error("Error fetching events by category:", err));
+        }
+
+
+        // [MODIFIED] - filterByCategory calls filterEventsByCategory right away
+        function filterByCategory(category, color) {
+            currentTag = category;
+            document.getElementById("categoryInput").value = category;
+            document.getElementById("chipText").textContent = category;
+            document.getElementById("tagChip").style.display = "inline-block";
+            document.getElementById("tagChip").style.backgroundColor = color;
+
+            // Save the selected tag/color so they persist on reload
+            localStorage.setItem("selectedTag", category);
+            localStorage.setItem("selectedTagColor", color);
+
+            // If date filter is active, do date+category
+            if (currentDate !== "") {
+                filterEventsByDate(currentDate, currentTag);
+            } else {
+                // Otherwise, filter by category only
+                filterEventsByCategory(category);
+            }
+        }
+
+        // Clear filter function called by the "x" button
+        function clearFilter() {
+            // Clear the search input if needed
+            document.getElementById("searchbox").value = "";
+            // Clear the category filter variables and UI
+            currentTag = "";
+            document.getElementById("categoryInput").value = "";
+            document.getElementById("chipText").textContent = "";
+            document.getElementById("tagChip").style.display = "none";
+            localStorage.removeItem("selectedTag");
+            localStorage.removeItem("selectedTagColor");
+
+            // If a date filter is active, re-fetch events for that date with no category
+            if (currentDate !== "") {
+                filterEventsByDate(currentDate, "");
+            } else {
+                // [MODIFIED] - Instead of reloading the page, fetch all events by category = ""
+                filterEventsByCategory("");
+            }
+        }
+
+        document.getElementById("removeTagBtn").addEventListener("click", clearFilter);
+
+        // Dark/Light mode
+        window.onload = function () {
+            let storedMode = localStorage.getItem("mode");
+            if (storedMode === "dark") {
+                document.body.classList.add("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                document.getElementById("modeicon").src = "@Url.Content("~/moon.png")";
+            } else {
+                document.body.classList.remove("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                document.getElementById("modeicon").src = "@Url.Content("~/sun.png")";
+            }
+
+            // Retrieve saved tag/color
+            let storedTag = localStorage.getItem("selectedTag");
+            let storedColor = localStorage.getItem("selectedTagColor");
+
+            if (storedTag && storedColor) {
+                // 1) Update the UI chip
+                document.getElementById("chipText").textContent = storedTag;
+                document.getElementById("tagChip").style.display = "inline-block";
+                document.getElementById("tagChip").style.backgroundColor = storedColor;
+                document.getElementById("categoryInput").value = storedTag;
+                currentTag = storedTag;
+
+                // 2) **Auto-apply** the filter by calling your existing function:
+                filterByCategory(storedTag, storedColor);
+            } else {
+                document.getElementById("tagChip").style.display = "none";
+            }
+        };
+
+
+        function toggleMode() {
+            let root = document.documentElement;
+            let modeIcon = document.getElementById("modeicon");
+            let storedMode = localStorage.getItem("mode");
+            if (storedMode === "dark") {
+                document.body.classList.remove("dark-mode");
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                localStorage.setItem("mode", "light");
+                modeIcon.src = "@Url.Content("~/sun.png")";
+            } else {
+                document.body.classList.add("dark-mode");
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                localStorage.setItem("mode", "dark");
+                modeIcon.src = "@Url.Content("~/moon.png")";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let filterBox = document.getElementById("filterbox");
+            let navbar = document.getElementById("navbar");
+            let categoryDiv = document.getElementById("categorydiv");
+            categoryDiv.addEventListener("click", function () {
+                if (filterBox.classList.contains("show")) {
+                    filterBox.style.transform = "translateY(-100%)";
+                    setTimeout(() => {
+                        filterBox.style.visibility = "hidden";
+                        filterBox.classList.remove("show");
+                        filterBox.style.zIndex = "-1";
+                        navbar.style.borderBottomLeftRadius = "20px";
+                        navbar.style.borderBottomRightRadius = "20px";
+                        navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+                    }, 300);
+                } else {
+                    filterBox.style.visibility = "visible";
+                    setTimeout(() => {
+                        filterBox.classList.add("show");
+                        filterBox.style.transform = "translateY(0)";
+                        filterBox.style.zIndex = "1";
+                        navbar.style.borderBottomLeftRadius = "0";
+                        navbar.style.borderBottomRightRadius = "0";
+                        navbar.style.boxShadow = "none";
+                    }, 10);
+                }
+            });
+            filterBox.addEventListener("wheel", function (event) {
+                if (event.deltaY !== 0) {
+                    event.preventDefault();
+                    filterBox.scrollLeft += event.deltaY * 2;
+                }
+            });
+        });
+
+        document.getElementById("createbutton").addEventListener("click", function () {
+            window.location.href = "/Event/Index";
+        });
+
+        function getTagColor(tag) {
+            switch (tag) {
+                case "📖 Anime & Manga": return "#D9A25F";
+                case "🎨 Art & Design": return "#89B0A5";
+                case "🎲 Board Games": return "#6D5B95";
+                case "📚 Books & Literature": return "#3D3D3D";
+                case "🚗 Cars & Motorcycles": return "#D9A25F";
+                case "✂️ DIY & Crafts": return "#89B0A5";
+                case "💄 Fashion & Beauty": return "#6D5B95";
+                case "💰 Finance & Investing": return "#3D3D3D";
+                case "💪 Fitness & Health": return "#D9A25F";
+                case "🍽️ Food & Cooking": return "#89B0A5";
+                case "🎬 Movies & TV Shows": return "#6D5B95";
+                case "🎶 Music": return "#3D3D3D";
+                case "🐶 Pets & Animals": return "#D9A25F";
+                case "📷 Photography": return "#89B0A5";
+                case "🔬 Science & Space": return "#6D5B95";
+                case "🏆 Sport": return "#3D3D3D";
+                case "💻 Technology & Gadgets": return "#D9A25F";
+                case "✈️ Travel & Adventure": return "#89B0A5";
+                case "🎮 Video Games": return "#6D5B95";
+                default: return "#CCCCCC";
+            }
+        }
+
+        // ================== CALENDAR (Thai Year) ==================
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+
+        document.addEventListener("DOMContentLoaded", function () {
+            renderCalendar(currentMonth, currentYear);
+            document.getElementById("prevMonth").addEventListener("click", function () {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                renderCalendar(currentMonth, currentYear);
+            });
+            document.getElementById("nextMonth").addEventListener("click", function () {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                renderCalendar(currentMonth, currentYear);
+            });
+            loadSpecialEvents();
+        });
+
+        function renderCalendar(month, year) {
+            const calendarBody = document.getElementById("calendarBody");
+            calendarBody.innerHTML = "";
+            const monthYearLabel = document.getElementById("monthYear");
+            const monthNames = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            let displayYear = year + 543;
+            monthYearLabel.textContent = monthNames[month] + " " + displayYear;
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            for (let i = 0; i < firstDay; i++) {
+                let emptyCell = document.createElement("div");
+                emptyCell.classList.add("day-cell", "empty");
+                calendarBody.appendChild(emptyCell);
+            }
+
+            let selectedDay = null, selectedMonth = null, selectedYear = null;
+            if (currentDate) {
+                const parts = currentDate.split('-');
+                if (parts.length === 3) {
+                    selectedYear = parseInt(parts[0]) - 543;
+                    selectedMonth = parseInt(parts[1]) - 1;
+                    selectedDay = parseInt(parts[2]);
+                }
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                let dayCell = document.createElement("div");
+                dayCell.classList.add("day-cell");
+                dayCell.textContent = day;
+                if (selectedDay === day && selectedMonth === month && selectedYear === year) {
+                    dayCell.classList.add("selected-day");
+                }
+                dayCell.addEventListener("click", function () {
+                    let thaiYear = year + 543;
+                    let monthStr = String(month + 1).padStart(2, '0');
+                    let dayStr = String(day).padStart(2, '0');
+                    let selectedDate = `${thaiYear}-${monthStr}-${dayStr}`;
+
+                    if (currentDate === selectedDate) {
+                        currentDate = "";
+                        document.querySelectorAll(".day-cell.selected-day").forEach(cell => {
+                            cell.classList.remove("selected-day");
+                        });
+                        if (currentTag && currentTag !== "") {
+                            window.location.href = `/Home/Index?category=${encodeURIComponent(currentTag)}`;
+                        } else {
+                            window.location.href = "/Home/Index";
+                        }
+                    } else {
+                        currentDate = selectedDate;
+                        document.querySelectorAll(".day-cell.selected-day").forEach(cell => {
+                            cell.classList.remove("selected-day");
+                        });
+                        dayCell.classList.add("selected-day");
+                        filterEventsByDate(currentDate, currentTag);
+                        loadUserEventsForDate(currentDate);
+                    }
+                });
+                calendarBody.appendChild(dayCell);
+            }
+        }
+
+        function filterEventsByDate(dateString, tagString) {
+            let url = `/Home/GetEventsByDate?date=${dateString}`;
+            if (tagString && tagString !== "") {
+                url += `&tag=${encodeURIComponent(tagString)}`;
+            }
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not OK");
+                    return response.json();
+                })
+                .then(events => { renderFilteredEvents(events); })
+                .catch(err => console.error("Error fetching events by date:", err));
+        }
+
+        function renderFilteredEvents(events) {
+            const container = document.querySelector("#activitybox .activitycontainer");
+            container.innerHTML = "";
+            if (!events || events.length === 0) {
+                container.innerHTML = "<div>No events found for this date.</div>";
+                return;
+            }
+            events.forEach(event => {
+                let start = new Date(event.startDateTime);
+                let end = new Date(event.endDateTime);
+                let formatDate = (d) => {
+                    let dd = String(d.getDate()).padStart(2, '0');
+                    let mm = String(d.getMonth() + 1).padStart(2, '0');
+                    let yyyy = d.getFullYear();
+                    let hh = String(d.getHours()).padStart(2, '0');
+                    let min = String(d.getMinutes()).padStart(2, '0');
+                    return `${dd}/${mm}/${yyyy} ${hh}:${min}`;
+                };
+                let dateText = `${formatDate(start)} - ${formatDate(end)}`;
+                let a = document.createElement("a");
+                a.className = "activity";
+                a.href = `/Event/DetailEachBox/${event.id}`;
+                a.innerHTML = `
+                    <div class="upbar">
+                        <div class="tag"  style="background-color: ${getTagColor(event.tag)};">${event.tag ? event.tag : ""}&nbsp;&nbsp;</div>
+                        <div class="paticipantdiv">
+                            <img class="paticipantimage" src="/paticipantlogo.png">
+                            <div class="paticipant"> Participant: ${event.joinedCount} / ${event.participants} </div>
+                        </div>
+                    </div>
+                    <div class="contentdiv">
+                        <div class="detaildiv">
+                            <div class="activityname">${event.name}</div>
+                            <div class="activitydate">${dateText}</div>
+                            <div class="activitydescription">${event.detail || ""}</div>
+                        </div>
+                        <div class="activityimagediv">
+                            <img class="activityimage" src="${event.imagepath}" onerror="this.src='/uploads/default-cover.png'">
+                        </div>
+                    </div>
+                `;
+                container.appendChild(a);
+            });
+        }
+
+        function loadUserEventsForDate(dateString) {
+            fetch(`/Home/GetUserEventsByDate?date=${dateString}`)
+                .then(res => res.json())
+                .then(events => {
+                    const list = document.getElementById("scheduledEventsList");
+                    list.innerHTML = "";
+                    if (!events || events.length === 0) {
+                        list.innerHTML = "<div id='nojoin'>No joined events on this date.</div>";
+                        return;
+                    }
+                    events.forEach(ev => {
+                        let options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+                        let start = new Date(ev.startDateTime).toLocaleString('th-TH', options).replace(',', '');
+                        let end = new Date(ev.endDateTime).toLocaleString('th-TH', options).replace(',', '');
+                        const link = document.createElement("a");
+                        link.href = `/Event/DetailEachBox/${ev.id}`;
+                        link.className = "scheduled-events-item";
+                        link.innerHTML = `
+                            <div class="scheduled-event-tag" style="background-color: ${getTagColor(ev.tag)};">${ev.tag}</div>
+                            <div class="scheduled-event-name">${ev.name}</div>
+                            <div class="scheduled-event-time">${start} - ${end}</div>
+                        `;
+                        list.appendChild(link);
+                    });
+                })
+                .catch(err => console.error("Error fetching user-joined events:", err));
+        }
+
+        function loadSpecialEvents() {
+            fetch("/Home/GetSpecialEvents")
+                .then(response => response.json())
+                .then(data => {
+                    renderRecommended(data.recommended);
+                    renderExpiring(data.expiring);
+                    renderClosing(data.closing);
+                })
+                .catch(err => console.error("Error fetching special events:", err));
+        }
+
+        function renderRecommended(events) {
+            const container = document.getElementById("recommendedList");
+            container.innerHTML = "";
+            if (!events || events.length === 0) {
+                container.innerHTML = "<div id='norec'>No recommended events.</div>";
+                return;
+            }
+            events.forEach(evt => {
+                const link = document.createElement("a");
+                link.href = `/Event/DetailEachBox/${evt.id}`;
+                link.className = "recommended-item";
+                link.innerHTML = `
+                    <div class="recommended-tag" style="background-color: ${getTagColor(evt.tag)};">${evt.tag}</div>
+                    <div class="recommended-info">${evt.name} (${evt.joinedCount}/${evt.participants} joined)</div>
+                `;
+                container.appendChild(link);
+            });
+        }
+
+        function renderExpiring(events) {
+            const container = document.getElementById("expiringList");
+            container.innerHTML = "";
+            if (!events || events.length === 0) {
+                container.innerHTML = "<div id='nofull'>No near full events.</div>";
+                return;
+            }
+            events.forEach(evt => {
+                const link = document.createElement("a");
+                link.href = `/Event/DetailEachBox/${evt.id}`;
+                link.className = "expiring-item";
+                let spotsLeft = evt.participants - evt.joinedCount;
+                link.innerHTML = `
+                    <div class="expiring-tag" style="background-color: ${getTagColor(evt.tag)};">${evt.tag}</div>
+                    <div class="expiring-info">${evt.name} (${spotsLeft} spots left)</div>
+                `;
+                container.appendChild(link);
+            });
+        }
+
+        function renderClosing(events) {
+            const container = document.getElementById("closingList");
+            container.innerHTML = "";
+            if (!events || events.length === 0) {
+                container.innerHTML = "<div id='noclose'>No near closed events.</div>";
+                return;
+            }
+            events.forEach(evt => {
+                const link = document.createElement("a");
+                link.href = `/Event/DetailEachBox/${evt.id}`;
+                link.className = "closing-item";
+                let closedDateStr = "";
+                if (evt.closedDate) {
+                    const d = new Date(evt.closedDate);
+                    closedDateStr = d.toLocaleString();
+                }
+                link.innerHTML = `
+                    <div class="closing-tag" style="background-color: ${getTagColor(evt.tag)};">${evt.tag}</div>
+                    <div class="closing-info">${evt.name}</div>
+                    <div class="closing-time">${closedDateStr}</div>
+                `;
+                container.appendChild(link);
+            });
+        }
+
+        function toggleNotifications() {
+            const dropdown = document.getElementById("notification-dropdown");
+            dropdown.classList.toggle("hidden");
+        }
+
+        document.getElementById("createbutton").addEventListener("click", function () {
+            window.location.href = "/Event/Index";
+        });
+    </script>
+    <script src="~/js/notifications.js"></script>
+</body>
+
+</html>

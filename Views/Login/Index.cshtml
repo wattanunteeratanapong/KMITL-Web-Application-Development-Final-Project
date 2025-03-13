@@ -1,0 +1,97 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Togeta</title>
+    <link rel="stylesheet" href="~/css/login.css">
+</head>
+<body>
+    <div id="logincanvas">
+        <div id="loginbox">
+
+            <div id="websitenamebox">
+                Togeta
+            </div>
+
+            <form method="post" asp-controller="Login" asp-action="Login" id="loginForm">
+                <div id="usernamebox">
+                    <div id="usernameboxtextbox">
+                        Username
+                    </div>
+                    <div id="usernameboxinputbox">
+                        <input type="text" id="usernameinput" name="username" required />
+                    </div>
+                </div>
+
+                <div id="passwordbox">
+                    <div id="passwordboxtext">
+                        Password
+                    </div>
+                    <div id="passwordboxinput">
+                        <input type="password" id="passwordinput" name="password" required />
+                    </div>
+                    <div id="signupbox">
+                        <a asp-controller="Signup" asp-action="Index" id="signuplink">Sign up?</a>
+                    </div>
+                </div>
+
+                <div id="signinbox">
+                    <button type="submit" id="signinbutton">Sign In</button>
+                </div>
+            </form>
+
+            @* @if (ViewData["LoginError"] as bool? == true) *@
+            @* { *@
+            @*     <div style="color: red; margin-top:2%"> *@
+            @*         Invalid username or password. *@
+            @*     </div> *@
+            @* } *@
+
+        </div>
+    </div>
+
+    @if (ViewData["LoginError"] as bool? == true)
+    {
+        <script>
+            // Trigger color change if login failed
+            window.addEventListener('DOMContentLoaded', (event) => {
+                changePadletColorOnError();
+            });
+        </script>
+    }
+
+    <script>
+        function changePadletColorOnError() {
+            document.documentElement.style.setProperty('--padlet-1', '#ff003d');
+            document.documentElement.style.setProperty('--padlet-2', '#ff99b1');
+            document.documentElement.style.setProperty('--padlet-3', '#7c011e');
+            document.documentElement.style.setProperty('--padlet-4', '#7c011e');
+            document.documentElement.style.setProperty('--padlet-5', '#7c011e');
+
+            setTimeout(function () {
+                document.documentElement.style.setProperty('--padlet-1', '#F5ECD5');
+                document.documentElement.style.setProperty('--padlet-2', '#FFFAEC');
+                document.documentElement.style.setProperty('--padlet-3', '#578E7E');
+                document.documentElement.style.setProperty('--padlet-4', '#3D3D3D');
+                document.documentElement.style.setProperty('--padlet-5', '#9AB9AA');
+            }, 300);
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            if (document.querySelector('.field-validation-error')) {
+                event.preventDefault();
+                changePadletColorOnError();
+            }
+        });
+    </script>
+
+</body>
+</html>

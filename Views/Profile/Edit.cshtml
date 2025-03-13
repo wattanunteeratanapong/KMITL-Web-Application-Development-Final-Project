@@ -1,0 +1,183 @@
+﻿@model Togeta.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/edit.css">
+    <title>Togeta</title>
+    <link rel="stylesheet" href="~/css/notifications.css?v=@DateTime.Now.Ticks">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="canvas">
+
+        <div id="navbar">
+            <a href="@Url.Action("Index", "Home")" id="leftdiv">Togeta</a>
+
+            <div id="rightdiv">
+                <!-- Toggle Mode -->
+                <div id="modediv">
+                    <div id="toggle-container" onclick="toggleMode()">
+                        <div id="toggle-circle">
+                            <img id="modeicon" src="@Url.Content("~/sun.png")" alt="modeicon">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification -->
+                <div id="notification-container">
+                    <a href="javascript:void(0)" id="notidiv" onclick="toggleNotifications()">
+                        <img id="noti" src="@Url.Content("~/noti icon.png")" alt="notification bell">
+                    </a>
+                    <!-- Notification Dropdown -->
+                    <div id="notification-dropdown" class="hidden">
+                        <h4>Notifications</h4>
+                        <ul id="notification-list">
+                        </ul>
+                        <div class="notification-actions">
+                            <button id="mark-read-btn" class="notification-btn">Mark as Read</button>
+                            <button id="clear-btn" class="notification-btn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Picture -->
+                <a href="@Url.Action("Index", "Profile")" id="profilediv">
+                    <div id="profileframe">
+                        <img id="profile-icon" src="@Url.Content($"{ViewData["ProfileImage"]}")" alt="profile icon"
+                            onerror="this.src='@Url.Content("~/default-profile.jpg")'" />
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div id="editbox">
+            <div id="edittitle">Edit Profile</div>
+            <form id="formbox" asp-action="UpdateProfile" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="inputGroup">
+                    <label>Profile Picture:</label>
+                    <input type="file" name="ProfileImage" accept="image/*">
+                </div>
+
+                <div class="inputGroup">
+                    <label>Cover Image:</label>
+                    <input type="file" name="CoverImage" accept="image/*">
+                </div>
+
+                <div class="inputGroup">
+                    <label>Bio:</label>
+                    <textarea asp-for="Bio" rows="3" required></textarea>
+                    <span id="bio-error" class="error-text"></span>
+                </div>
+
+                <div class="inputGroup">
+                    <label>Interests:</label>
+                    <select class="custom-scrollbar" name="SelectedInterests[]" multiple="multiple" size="9">
+                        <option value="📖 Anime & Manga">📖 Anime & Manga</option>
+                        <option value="🎨 Art & Design">🎨 Art & Design</option>
+                        <option value="🎲 Board Games">🎲 Board Games</option>
+                        <option value="📚 Books & Literature">📚 Books & Literature</option>
+                        <option value="🚗 Cars & Motorcycles">🚗 Cars & Motorcycles</option>
+                        <option value="✂️ DIY & Crafts">✂️ DIY & Crafts</option>
+                        <option value="💄 Fashion & Beauty">💄 Fashion & Beauty</option>
+                        <option value="💪 Fitness & Health">💪 Fitness & Health</option>
+                        <option value="🍽️ Food & Cooking">🍽️ Food & Cooking</option>
+                        <option value="💰 Finance & Investing">💰 Finance & Investing</option>
+                        <option value="🎬 Movies & TV Shows">🎬 Movies & TV Shows</option>
+                        <option value="🎶 Music">🎶 Music</option>
+                        <option value="🐶 Pets & Animals">🐶 Pets & Animals</option>
+                        <option value="📷 Photography">📷 Photography</option>
+                        <option value="🔬 Science & Space">🔬 Science & Space</option>
+                        <option value="🏆 Sport">🏆 Sport</option>
+                        <option value="💻 Technology & Gadgets">💻 Technology & Gadgets</option>
+                        <option value="✈️ Travel & Adventure">✈️ Travel & Adventure</option>
+                        <option value="🎮 Video Games">🎮 Video Games</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="updateBtn">Update Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            let storedMode = localStorage.getItem("mode");
+
+            if (storedMode === "dark") {
+                document.body.classList.add("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                document.getElementById("modeicon").src = "@Url.Content("~/moon.png")";
+            } else {
+                document.body.classList.remove("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                document.getElementById("modeicon").src = "@Url.Content("~/sun.png")";
+            }
+        }
+
+        function toggleMode() {
+            let root = document.documentElement;
+            let modeIcon = document.getElementById("modeicon");
+            let storedMode = localStorage.getItem("mode");
+
+            if (storedMode === "dark") {
+                document.body.classList.remove("dark-mode");
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+
+                localStorage.setItem("mode", "light");
+                modeIcon.src = "@Url.Content("~/sun.png")";
+            } else {
+                document.body.classList.add("dark-mode");
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+
+                localStorage.setItem("mode", "dark");
+                modeIcon.src = "@Url.Content("~/moon.png")";
+            }
+        }
+
+        const selectElement = document.querySelector("select");
+        const scrollbarContainer = document.querySelector(".custom-scrollbar");
+
+        selectElement.addEventListener("focus", () => {
+            scrollbarContainer.classList.add("scrollbar-focused");
+        });
+
+        selectElement.addEventListener("blur", () => {
+            scrollbarContainer.classList.remove("scrollbar-focused");
+        });
+    </script>
+    <script src="~/js/notifications.js"></script>
+</body>
+
+</html>

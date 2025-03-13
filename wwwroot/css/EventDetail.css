@@ -1,0 +1,1264 @@
+﻿
+@media only screen and (orientation: landscape) {
+  /* Universal */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  /* Padlet */
+  :root {
+    --padlet-1: #f5ecd5;
+    --padlet-2: #fffaec;
+    --padlet-3: #578e7e;
+    --padlet-4: #3d3d3d;
+    --padlet-5: #9ab9aa;
+  }
+
+  /* Scrollbar Styling */
+  .custom-scrollbar {
+    display: block;
+    overflow-y: auto;
+    max-height: 85%;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--padlet-4);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  /* Body */
+  body {
+    background-color: var(--padlet-1);
+  }
+
+  /* Canvas */
+  #canvas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--padlet-1);
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* Navbar */
+  #navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--padlet-3);
+    width: 100%;
+    height: 7vh;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 0px 5px 0px var(--padlet-4);
+    z-index: 2;
+  }
+
+  /* Left Div */
+  #leftdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fffaec;
+    width: 10vw;
+    height: 100%;
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+  /* Right Div */
+  #rightdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 12vw;
+    height: 100%;
+  }
+
+  #notidiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+    margin-left: 18px;
+  }
+
+  #noti {
+    height: 60%;
+  }
+
+  #profilediv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+  }
+
+  #profileframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--padlet-3);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+  }
+
+  #profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Toggle Button */
+  #modediv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+  }
+
+  #toggle-container {
+    width: 50px;
+    height: 32px;
+    background: var(--padlet-2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  #toggle-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23px;
+    height: 23px;
+    background: var(--padlet-4);
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    transition: left 0.3s, background 0.3s;
+  }
+
+  .dark-mode #toggle-container {
+    background: var(--padlet-4);
+  }
+
+  .dark-mode #toggle-circle {
+    left: 24px;
+    background: var(--padlet-2);
+  }
+
+  #modeicon {
+    height: 80%;
+  }
+
+  /* Profile Box */
+  #eventbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 45vw;
+    height: 88vh;
+    border-radius: 20px;
+    color: var(--padlet-4);
+    background-color: var(--padlet-2);
+    box-shadow: 0px 0px 4px var(--padlet-4);
+    overflow: hidden;
+    margin-bottom: 2.5vh;
+  }
+
+  /* Cover Image */
+  #cover-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-top: -1%;
+    border-bottom: 5px solid var(--padlet-3);
+  }
+
+  /* Edit Profile Button */
+  #maineventdiv {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* Content Div */
+  #contentdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 65%;
+    padding: 20px;
+    line-height: 1.5;
+  }
+
+  #infodiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 50%;
+    height: 100%;
+  }
+
+  #event-name {
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  #tag-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+  }
+
+  #event-tag {
+    text-align: center;
+    width: auto;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 1%;
+    color: #fffaec;
+  }
+
+  #locaiton-image {
+    width: 13px;
+    height: 18px;
+    object-fit: cover;
+  }
+
+  #time-image {
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+  }
+
+  #detail-image {
+    width: 18px;
+    height: 14px;
+    object-fit: cover;
+  }
+
+  /* Separate Line */
+  #seperateline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 5px;
+    background-color: #3d3d3d;
+  }
+
+  /* Patient Div */
+  #paticipantdiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
+
+  #hosttitle {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  #hostdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid var(--padlet-4);
+  }
+
+  #hostprofile {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    border: 2px solid white;
+    margin: 10px;
+    overflow: hidden;
+  }
+
+  #hostprofileimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #hostdetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+  }
+
+  #hostname {
+    width: 100%;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  #hostcredit {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Participant Div */
+  #paticipantstitle {
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #paticipantsdiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+    border: 2px solid var(--padlet-4);
+    border-radius: 15px;
+    overflow-y: scroll;
+    z-index: 1;
+  }
+
+  /* Paticipant Box */
+  .paticipantbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    flex-shrink: 0;
+    margin-top: 2vh;
+    background-color: var(--padlet-1);
+    overflow: hidden;
+  }
+
+  .paticipantprofile {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    border: 2px solid var(--padlet-4);
+    overflow: hidden;
+    margin-left: 50%;
+  }
+
+  .paticipantprofileimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .paticipantname {
+    width: 100%;
+    text-align: center;
+  }
+
+  .paticipantcredit {
+    width: 100%;
+    text-align: center;
+  }
+
+  .paticipant-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    margin-right: 2vw;
+  }
+
+  #host-button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--padlet-3);
+    color: var(--padlet-2);
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+    background-color: var(--padlet-4);
+  }
+
+  #close-btn {
+    margin-left: 200px;
+  }
+
+  #cancle-btn {
+    margin-right: 200px;
+  }
+
+  #kickdiv {
+    width: 23px;
+    height: 23px;
+    margin-right: 20px;
+  }
+
+  #kickbutton {
+    width: 100%;
+    height: 100%;
+    margin-right: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--padlet-1);
+  }
+
+  .commentdiv {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+  }
+
+  .commentbutton {
+    background-image: url("/commenticon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    text-indent: -9999px;
+  }
+
+  .comment-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 63vh;
+    left: 73vw;
+    width: 20vw;
+    height: 32vh;
+    background-color: var(--padlet-2);
+    box-shadow: 0px 0px 4px var(--padlet-4);
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .commentform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .usercontent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    background-color: var(--padlet-1);
+  }
+
+  .profile-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin-left: 10%;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--padlet-4);
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 70%;
+    margin-right: 20%;
+  }
+
+  .username {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .comment-textbox {
+    width: 80%;
+    height: 30%;
+    border-radius: 10px;
+    background-color: var(--padlet-1);
+    border: 2px solid var(--padlet-4);
+    padding: 10px;
+    resize: none;
+  }
+
+  .comment-textbox:focus {
+    color: #fffaec;
+    background-color: var(--padlet-3);
+  }
+
+  /* Star Rating */
+  .rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+  }
+
+  .rate:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+  }
+
+  .rate:not(:checked) > label {
+    float: right;
+    width: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    /* fallback color */
+    color: #ccc;
+  }
+
+  .rate:not(:checked) > label:before {
+    content: "⭐️";
+    margin: 5px 1px;
+    /* This adds 10px on the left/right */
+    /* Force the emoji to appear grey by applying a grayscale filter */
+    filter: grayscale(100%);
+    transition: filter 0.2s, color 0.2s;
+  }
+
+  /* When a star is checked, remove the grayscale filter so it shows in yellow */
+  .rate > input:checked ~ label:before {
+    filter: none;
+    color: #ffc700;
+  }
+
+  /* Hover effect for stars that are not checked:
+   Remove the grayscale to show a brighter color */
+  .rate:not(:checked) > label:hover:before,
+  .rate:not(:checked) > label:hover ~ label:before {
+    filter: none;
+    color: #deb217;
+  }
+
+  /* Adjusted hover effect for stars that are already checked */
+  .rate > input:checked + label:hover:before,
+  .rate > input:checked + label:hover ~ label:before,
+  .rate > input:checked ~ label:hover:before,
+  .rate > input:checked ~ label:hover ~ label:before,
+  .rate > label:hover ~ input:checked ~ label:before {
+    color: #ffdd00;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  /* Universal */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  /* Padlet */
+  :root {
+    --padlet-1: #f5ecd5;
+    --padlet-2: #fffaec;
+    --padlet-3: #578e7e;
+    --padlet-4: #3d3d3d;
+    --padlet-5: #9ab9aa;
+  }
+
+  /* Scrollbar Styling */
+  .custom-scrollbar {
+    display: block;
+    overflow-y: auto;
+    max-height: 85%;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--padlet-4);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  /* Body */
+  body {
+    background-color: var(--padlet-1);
+  }
+
+  /* Canvas */
+  #canvas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--padlet-1);
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* Navbar */
+  #navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--padlet-3);
+    width: 100%;
+    height: 7vh;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 0px 5px 0px var(--padlet-4);
+    z-index: 2;
+  }
+
+  /* Left Div */
+  #leftdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fffaec;
+    width: 20vw;
+    height: 100%;
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+  /* Right Div */
+  #rightdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    height: 100%;
+  }
+
+  #notidiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+    margin-left: 18px;
+  }
+
+  #noti {
+    height: 60%;
+  }
+
+  #profilediv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+  }
+
+  #profileframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--padlet-3);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+  }
+
+  #profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Toggle Button */
+  #modediv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+  }
+
+  #toggle-container {
+    width: 50px;
+    height: 32px;
+    background: var(--padlet-2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  #toggle-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23px;
+    height: 23px;
+    background: var(--padlet-4);
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    transition: left 0.3s, background 0.3s;
+  }
+
+  .dark-mode #toggle-container {
+    background: var(--padlet-4);
+  }
+
+  .dark-mode #toggle-circle {
+    left: 24px;
+    background: var(--padlet-2);
+  }
+
+  #modeicon {
+    height: 80%;
+  }
+
+  /* Profile Box */
+  #eventbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 85vw;
+    height: 88vh;
+    border-radius: 20px;
+    color: var(--padlet-4);
+    background-color: var(--padlet-2);
+    box-shadow: 0px 0px 4px var(--padlet-4);
+    overflow: hidden;
+    margin-bottom: 2.5vh;
+  }
+
+  /* Cover Image */
+  #cover-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-top: -1%;
+    border-bottom: 5px solid var(--padlet-3);
+  }
+
+  /* Edit Profile Button */
+  #maineventdiv {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* Content Div */
+  #contentdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 65%;
+    padding: 20px;
+    line-height: 1.5;
+  }
+
+  #infodiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 50%;
+    height: 100%;
+  }
+
+  #event-name {
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  #tag-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+  }
+
+  #event-tag {
+    text-align: center;
+    width: auto;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 1%;
+    color: #fffaec;
+  }
+
+  #locaiton-image {
+    width: 13px;
+    height: 18px;
+    object-fit: cover;
+  }
+
+  #time-image {
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+  }
+
+  #detail-image {
+    width: 18px;
+    height: 14px;
+    object-fit: cover;
+  }
+
+  /* Separate Line */
+  #seperateline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 5px;
+    background-color: #3d3d3d;
+  }
+
+  /* Patient Div */
+  #paticipantdiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
+
+  #hosttitle {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  #hostdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid var(--padlet-4);
+  }
+
+  #hostprofile {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    border: 2px solid white;
+    margin: 10px;
+    overflow: hidden;
+  }
+
+  #hostprofileimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #hostdetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+  }
+
+  #hostname {
+    width: 100%;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  #hostcredit {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Participant Div */
+  #paticipantstitle {
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #paticipantsdiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+    border: 2px solid var(--padlet-4);
+    border-radius: 15px;
+    overflow-y: scroll;
+    z-index: 1;
+  }
+
+  /* Paticipant Box */
+  .paticipantbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    flex-shrink: 0;
+    margin-top: 2vh;
+    background-color: var(--padlet-1);
+    overflow: hidden;
+  }
+
+  .paticipantprofile {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    border: 2px solid var(--padlet-4);
+    overflow: hidden;
+    margin-left: 50%;
+  }
+
+  .paticipantprofileimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .paticipantname {
+    width: 100%;
+    text-align: center;
+  }
+
+  .paticipantcredit {
+    width: 100%;
+    text-align: center;
+  }
+
+  .paticipant-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    margin-right: 2vw;
+  }
+
+  #host-button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--padlet-3);
+    color: var(--padlet-2);
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+    background-color: var(--padlet-4);
+  }
+
+  #close-btn {
+    margin-left: 200px;
+  }
+
+  #cancle-btn {
+    margin-right: 200px;
+  }
+
+  #kickdiv {
+    width: 23px;
+    height: 23px;
+    margin-right: 20px;
+  }
+
+  #kickbutton {
+    width: 100%;
+    height: 100%;
+    margin-right: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--padlet-1);
+  }
+
+  .commentdiv {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+  }
+
+  .commentbutton {
+    background-image: url("/commenticon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    text-indent: -9999px;
+  }
+
+  .comment-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 55vh;
+    left: 8.5vw;
+    width: 40vw;
+    height: 41.5vh;
+    background-color: var(--padlet-2);
+    box-shadow: 0px 0px 4px var(--padlet-4);
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .commentform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .usercontent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    background-color: var(--padlet-1);
+  }
+
+  .profile-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin-left: 10%;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--padlet-4);
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 70%;
+    margin-right: 20%;
+  }
+
+  .username {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .comment-textbox {
+    width: 80%;
+    height: 30%;
+    border-radius: 10px;
+    background-color: var(--padlet-1);
+    border: 2px solid var(--padlet-4);
+    padding: 10px;
+    resize: none;
+  }
+
+  .comment-textbox:focus {
+    color: #fffaec;
+    background-color: var(--padlet-3);
+  }
+
+  /* Star Rating */
+  .rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+  }
+
+  .rate:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+  }
+
+  .rate:not(:checked) > label {
+    float: right;
+    width: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    /* fallback color */
+    color: #ccc;
+  }
+
+  .rate:not(:checked) > label:before {
+    content: "⭐️";
+    margin: 5px 1px;
+    /* This adds 10px on the left/right */
+    /* Force the emoji to appear grey by applying a grayscale filter */
+    filter: grayscale(100%);
+    transition: filter 0.2s, color 0.2s;
+  }
+
+  /* When a star is checked, remove the grayscale filter so it shows in yellow */
+  .rate > input:checked ~ label:before {
+    filter: none;
+    color: #ffc700;
+  }
+
+  /* Hover effect for stars that are not checked:
+   Remove the grayscale to show a brighter color */
+  .rate:not(:checked) > label:hover:before,
+  .rate:not(:checked) > label:hover ~ label:before {
+    filter: none;
+    color: #deb217;
+  }
+
+  /* Adjusted hover effect for stars that are already checked */
+  .rate > input:checked + label:hover:before,
+  .rate > input:checked + label:hover ~ label:before,
+  .rate > input:checked ~ label:hover:before,
+  .rate > input:checked ~ label:hover ~ label:before,
+  .rate > label:hover ~ input:checked ~ label:before {
+    color: #ffdd00;
+  }
+}

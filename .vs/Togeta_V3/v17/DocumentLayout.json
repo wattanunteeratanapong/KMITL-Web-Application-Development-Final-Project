@@ -1,0 +1,164 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Controllers\\EventController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\EventController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Event\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Event\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Event\\DetailEachBox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Event\\DetailEachBox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Event\\Detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Event\\Detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\wwwroot\\css\\Event.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wwwroot\\css\\Event.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 332,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Event.css",
+              "DocumentMoniker": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\wwwroot\\css\\Event.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\Event.css",
+              "ToolTip": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\wwwroot\\css\\Event.css",
+              "RelativeToolTip": "wwwroot\\css\\Event.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-26T10:13:02.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Event\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Event\\Index.cshtml",
+              "ToolTip": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Event\\Index.cshtml",
+              "RelativeToolTip": "Views\\Event\\Index.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEUAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T09:53:36.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DetailEachBox.cshtml",
+              "DocumentMoniker": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Event\\DetailEachBox.cshtml",
+              "RelativeDocumentMoniker": "Views\\Event\\DetailEachBox.cshtml",
+              "ToolTip": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Event\\DetailEachBox.cshtml",
+              "RelativeToolTip": "Views\\Event\\DetailEachBox.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T09:53:32.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Event\\Detail.cshtml",
+              "RelativeDocumentMoniker": "Views\\Event\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Event\\Detail.cshtml",
+              "RelativeToolTip": "Views\\Event\\Detail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T09:53:27.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventController.cs",
+              "ToolTip": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Controllers\\EventController.cs",
+              "RelativeToolTip": "Controllers\\EventController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T09:50:48.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T09:50:25.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAAAFcAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T07:20:42.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "home.css",
+              "DocumentMoniker": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\wwwroot\\css\\home.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\home.css",
+              "ToolTip": "C:\\Users\\watta\\OneDrive\\\u0E40\u0E2D\u0E01\u0E2A\u0E32\u0E23\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Togeta_V3-20250226T060941Z-001\\Togeta_V3\\wwwroot\\css\\home.css",
+              "RelativeToolTip": "wwwroot\\css\\home.css",
+              "ViewState": "AgIAAOkBAAAAAAAAAADwvxQCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-19T02:52:58.253Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

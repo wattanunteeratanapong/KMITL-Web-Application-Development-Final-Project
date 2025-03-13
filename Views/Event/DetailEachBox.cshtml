@@ -1,0 +1,554 @@
+﻿@model Togeta.Models.Event
+@using System.Globalization
+
+@{
+    Layout = null;
+
+    // Convert ClosedDate to UTC for countdown
+    var closedDateUtc = Model.ClosedDate != null
+        ? Model.ClosedDate.Value.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)
+        : "";
+
+    bool isEventClosed = Model.ClosedDate != null && Model.ClosedDate <= DateTime.Now;
+    bool isEventFull = ViewBag.CurrentParticipants >= Model.Participants;
+    bool isHost = ViewBag.IsCreator == true;
+
+    var encodedLocation = Uri.EscapeDataString(Model.location);
+    var currentTime = DateTime.Now;
+    var eventEndTime = Model.ClosedDate;
+    var currentUserId = (int)(ViewBag.CurrentUserId ?? 0);
+
+    // Check if current user is in the event participants
+    bool userIsParticipant = false;
+    if (ViewBag.Participants != null)
+    {
+        var participantList = ViewBag.Participants as List<Togeta.Models.User>;
+        userIsParticipant = participantList != null && participantList.Any(u => u.Id == currentUserId);
+    }
+
+    // We'll still retrieve all comments from ViewBag.AllComments for logic 
+    // like "has user already commented?" but NOT for counting in the view.
+    var allComments = ViewBag.AllComments as List<Togeta.Models.Comment> ?? new List<Togeta.Models.Comment>();
+}
+
+@functions {
+    string GetTagColor(string tag)
+    {
+        switch (tag)
+        {
+            case "📖 Anime & Manga": return "#D9A25F";
+            case "🎨 Art & Design": return "#89B0A5";
+            case "🎲 Board Games": return "#6D5B95";
+            case "📚 Books & Literature": return "#3D3D3D";
+            case "🚗 Cars & Motorcycles": return "#D9A25F";
+            case "✂️ DIY & Crafts": return "#89B0A5";
+            case "💄 Fashion & Beauty": return "#6D5B95";
+            case "💰 Finance & Investing": return "#3D3D3D";
+            case "💪 Fitness & Health": return "#D9A25F";
+            case "🍽️ Food & Cooking": return "#89B0A5";
+            case "🎬 Movies & TV Shows": return "#6D5B95";
+            case "🎶 Music": return "#3D3D3D";
+            case "🐶 Pets & Animals": return "#D9A25F";
+            case "📷 Photography": return "#89B0A5";
+            case "🔬 Science & Space": return "#6D5B95";
+            case "🏆 Sport": return "#3D3D3D";
+            case "💻 Technology & Gadgets": return "#D9A25F";
+            case "✈️ Travel & Adventure": return "#89B0A5";
+            case "🎮 Video Games": return "#6D5B95";
+            default: return "#CCCCCC";
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Togeta</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="~/css/EventDetail.css?v=@DateTime.Now.Ticks" />
+    <link rel="stylesheet" href="~/css/notifications.css?v=@DateTime.Now.Ticks">
+</head>
+<body>
+    <div id="canvas">
+        <!-- Navbar -->
+        <div id="navbar">
+            <a asp-controller="Home" asp-action="Index" id="leftdiv">Togeta</a>
+            <div id="rightdiv">
+                <!-- Mode Toggle -->
+                <div id="modediv">
+                    <div id="toggle-container" onclick="toggleMode()">
+                        <div id="toggle-circle">
+                            <img id="modeicon" src="@Url.Content("~/sun.png")" alt="modeicon" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Notifications -->
+                <div id="notification-container">
+                    <a href="javascript:void(0)" id="notidiv" onclick="toggleNotifications()">
+                        <img id="noti" src="@Url.Content("~/noti icon.png")" alt="notification bell">
+                    </a>
+                    <div id="notification-dropdown" class="hidden">
+                        <h4>Notifications</h4>
+                        <ul id="notification-list"></ul>
+                        <div class="notification-actions">
+                            <button id="mark-read-btn" class="notification-btn">Mark as Read</button>
+                            <button id="clear-btn" class="notification-btn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Profile Icon -->
+                <a asp-controller="Profile" asp-action="Index" id="profilediv">
+                    <div id="profileframe">
+                        <img id="profile" src="@Url.Content($"{ViewData["ProfileImage"]}")" alt="profile icon"
+                             onerror="this.src='@Url.Content("~/profile icon.png")'" />
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Event Box -->
+        <div id="eventbox">
+            <div id="maineventdiv" style="position: relative;">
+                <img id="cover-image" src="@Url.Content(@Model.Imagepath)" alt="Event Cover"
+                     onerror="this.src='@Url.Content("~/profile icon.png")'" />
+            </div>
+
+            <!-- Main content with event details -->
+            <div id="contentdiv">
+                <div id="infodiv">
+                    <div id="event-name">@Model.Name</div>
+                    <div id="tag-div">
+                        <div id="event-tag" style="background-color: @(GetTagColor(Model.Tag));">
+                            @Model.Tag
+                        </div>
+                    </div>
+                    <div id="event-location">
+                        <span id="location-logo">
+                            <img id="locaiton-image" src="@Url.Content("~/locationicon.png")" alt="location" />
+                        </span>
+                        <b>Location : </b>
+                        <a href="https://www.google.com/maps/search/?q=@encodedLocation" target="_blank">
+                            @Model.location
+                        </a>
+                    </div>
+                    <div id="event-date">
+                        <span>
+                            <img id="time-image" src="@Url.Content("~/clockicon.png")" alt="time" />
+                        </span>
+                        <b>Time : </b>
+                        @Model.StartDateTime.ToString("dd/MM/yyyy HH:mm") -
+                        @Model.EndDateTime.ToString("dd/MM/yyyy HH:mm")
+                    </div>
+                    @if (Model.ClosedDate != null)
+                    {
+                        <div>
+                            <span>
+                                <img id="time-image" src="@Url.Content("~/clockicon.png")" alt="close time" />
+                            </span>
+                            <b>Close Date : </b>
+                            @Model.ClosedDate
+                        </div>
+                        <div>
+                            <span>
+                                <img id="time-image" src="@Url.Content("~/clockicon.png")" alt="time left" />
+                            </span>
+                            <b>Time Left : </b>
+                            <span id="countdown"></span>
+                        </div>
+                    }
+                    <div>
+                        <span>
+                            <img id="time-image" src="@Url.Content("~/clockicon.png")" alt="create time" />
+                        </span>
+                        <b>Create Since : </b>
+                        @ViewBag.CreateSince
+                    </div>
+                    <div>
+                        <span>
+                            <img id="detail-image" src="@Url.Content("~/Iconblack.png")" alt="detail" />
+                        </span>
+                        <b>Detail : </b>
+                        @Model.Detail
+                    </div>
+                </div>
+
+                <!-- Separator line -->
+                <div id="seperateline"></div>
+
+                <!-- Participants and Host Details -->
+                <div id="paticipantdiv">
+                    <!-- Host Section -->
+                    <div id="hosttitle">Host</div>
+                    <div id="hostdiv">
+                        @if (ViewBag.HostUser != null)
+                        {
+                            <a asp-controller="Profile" asp-action="Index" asp-route-id="@ViewBag.HostUser.Id">
+                                <div id="hostprofile">
+                                    <img id="hostprofileimage" src="@Url.Content($"{ViewBag.HostUser.ProfileImagePath}")"
+                                         width="80" style="border-radius: 50%;" />
+                                </div>
+                            </a>
+                            <div id="hostdetail">
+                                <div id="hostname">
+                                    @ViewBag.HostUser.FirstName @ViewBag.HostUser.LastName
+                                    @* Only allow comment if the event ended, user is participant, user not host, and hasn't commented *@
+                                    @{
+                                        bool eventEnded = (eventEndTime <= currentTime);
+                                        bool isSelf = (ViewBag.HostUser.Id == currentUserId);
+                                        bool hasCommentedHost = allComments.Any(c =>
+                                            c.SenderId == currentUserId &&
+                                            c.ReceiverId == ViewBag.HostUser.Id &&
+                                            c.EventId == Model.Id
+                                        );
+                                    }
+                                    @if (eventEnded && userIsParticipant && !isSelf && !hasCommentedHost)
+                                    {
+                                        <div class="commentdiv" style="display:inline-block;">
+                                            <button class="commentbutton"
+                                                    style="font-size:0.9em; margin-left:8px;"
+                                                    onclick="toggleCommentBox('host')">
+                                                Comment
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+
+                                <!-- Use the stored CommentCount & CreditScore -->
+                                <div id="hostcredit">
+                                    ⭐ @($"{ViewBag.HostUser.CreditScore:F2}") (@ViewBag.HostUser.CommentCount)
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <p><strong>No host data found.</strong></p>
+                        }
+                    </div>
+
+                    <!-- Hidden Host Comment Box -->
+                    @if (ViewBag.HostUser != null && (eventEndTime <= currentTime) && userIsParticipant && (ViewBag.HostUser.Id != currentUserId))
+                    {
+                        bool hasCommentedHost = allComments.Any(c =>
+                            c.SenderId == currentUserId &&
+                            c.ReceiverId == ViewBag.HostUser.Id &&
+                            c.EventId == Model.Id
+                        );
+                        @if (!hasCommentedHost)
+{
+    <div class="comment-box" id="commentBox-host">
+        <form id="commentForm-host" class="commentform" method="post" asp-action="Comment" asp-controller="Event">
+            <div class="usercontent">
+                <div class="profile-frame">
+                    <img class="profile-image" src="@Url.Content(ViewBag.HostUser.ProfileImagePath)" alt="Profile" width="80" style="border-radius:50%;" />
+                </div>
+                <div class="user-info">
+                    <div class="username">@ViewBag.HostUser.FirstName @ViewBag.HostUser.LastName</div>
+                    <div>
+                        ⭐ @($"{ViewBag.HostUser.CreditScore:F2}") (@ViewBag.HostUser.CommentCount)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rate">
+                <input type="radio" id="star5-host" name="creditscore" value="5" />
+                <label for="star5-host" title="5 stars"></label>
+                <input type="radio" id="star4-host" name="creditscore" value="4" />
+                <label for="star4-host" title="4 stars"></label>
+                <input type="radio" id="star3-host" name="creditscore" value="3" />
+                <label for="star3-host" title="3 stars"></label>
+                <input type="radio" id="star2-host" name="creditscore" value="2" />
+                <label for="star2-host" title="2 stars"></label>
+                <input type="radio" id="star1-host" name="creditscore" value="1" />
+                <label for="star1-host" title="1 star"></label>
+            </div>
+            
+            <input type="hidden" name="eventId" value="@Model.Id" />
+            <input type="hidden" name="ReceiverId" value="@ViewBag.HostUser.Id" />
+            <textarea class="comment-textbox" name="content" placeholder="Write your comment..."></textarea>
+            <button type="submit" class="btn btn-success btn-sm">Submit</button>
+        </form>
+    </div>
+}
+
+                    }
+
+                    <!-- Participants Section -->
+                    <div id="paticipantstitle">Participants (@ViewBag.CurrentParticipants/@Model.Participants)</div>
+                    <div id="paticipantsdiv" class="paticipantsdiv custom-scrollbar">
+                        @if (ViewBag.Participants != null && ViewBag.Participants.Count > 0)
+                        {
+                            foreach (var participant in ViewBag.Participants)
+                            {
+                                // Skip the host
+                                if (participant.Id != Model.CreatorId)
+                                {
+                                    <div class="paticipantbox custom-scrollbar">
+                                        <a asp-controller="Profile" asp-action="Index" asp-route-id="@participant.Id">
+                                            <div class="paticipantprofile">
+                                                <img class="paticipantprofileimage"
+                                                     src="@Url.Content(participant.ProfileImagePath)"
+                                                     width="60" style="border-radius: 50%;" />
+                                            </div>
+                                        </a>
+                                        <div class="paticipantdetail">
+                                            <div class="paticipantname">@participant.FirstName @participant.LastName</div>
+                                            <!-- Use stored CommentCount & CreditScore -->
+                                            <div class="paticipantcredit">
+                                                ⭐ @($"{participant.CreditScore:F2}") (@participant.CommentCount)
+                                            </div>
+                                        </div>
+                                        @{
+                                            bool eventEnded = (eventEndTime <= currentTime);
+                                            bool isSelf = (participant.Id == currentUserId);
+                                            bool hasCommented = allComments.Any(c =>
+                                                c.SenderId == currentUserId &&
+                                                c.ReceiverId == participant.Id &&
+                                                c.EventId == Model.Id
+                                            );
+                                        }
+                                        <div class="paticipant-actions">
+                                            @* Kick only if user is host and event not ended *@
+                                            @if (ViewBag.IsCreator == true && !eventEnded)
+                                            {
+                                                <form asp-action="KickParticipant" asp-controller="Event" method="post"
+                                                      onsubmit="return confirm('Are you sure you want to remove this participant?');">
+                                                    <input type="hidden" name="eventId" value="@Model.Id" />
+                                                    <input type="hidden" name="userId" value="@participant.Id" />
+                                                    <button type="submit" id="kickbutton"><img src="@Url.Content("~/kickicon.png")" alt="kickicon"></button>
+                                                </form>
+                                            }
+                                            @* Show "Comment" only if event ended, user is participant, not self, and not commented *@
+                                            @if (eventEnded && userIsParticipant && !isSelf && !hasCommented)
+                                            {
+                                                <div class="commentdiv">
+                                                    <button class="commentbutton" onclick="toggleCommentBox(@participant.Id)">
+                                                        Comment
+                                                    </button>
+                                                </div>
+                                                <div id="commentBox-@participant.Id" class="comment-box" style="display: none;">
+                                                    <form id="commentForm-@participant.Id" class="commentform"
+                                                          method="post" asp-action="Comment" asp-controller="Event">
+                                                        <div class="usercontent">
+                                                            <div class="profile-frame">
+                                                                <img class="profile-image"
+                                                                    src="@Url.Content(participant.ProfileImagePath)"
+                                                                    alt="Profile" width="80" style="border-radius:50%;" />
+                                                            </div>
+                                                            <div class="user-info">
+                                                                <div class="username">@participant.FirstName @participant.LastName</div>
+                                                                <!-- Show participant rating + stored count -->
+                                                                <div>
+                                                                    ⭐ @($"{participant.CreditScore:F2}") (@participant.CommentCount) 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Correct star values for participants as well -->
+                                                        <div class="rate">
+                                                            <input type="radio" id="star5-@participant.Id" name="creditscore" value="5" />
+                                                            <label for="star5-@participant.Id" title="5 stars"></label>
+
+                                                            <input type="radio" id="star4-@participant.Id" name="creditscore" value="4" />
+                                                            <label for="star4-@participant.Id" title="4 stars"></label>
+
+                                                            <input type="radio" id="star3-@participant.Id" name="creditscore" value="3" />
+                                                            <label for="star3-@participant.Id" title="3 stars"></label>
+
+                                                            <input type="radio" id="star2-@participant.Id" name="creditscore" value="2" />
+                                                            <label for="star2-@participant.Id" title="2 stars"></label>
+
+                                                            <input type="radio" id="star1-@participant.Id" name="creditscore" value="1" />
+                                                            <label for="star1-@participant.Id" title="1 star"></label>
+                                                        </div>
+
+                                                        <input type="hidden" name="eventId" value="@Model.Id" />
+                                                        <input type="hidden" name="ReceiverId" value="@participant.Id" />
+                                                        <textarea class="comment-textbox" name="content" placeholder="Write your comment..."></textarea>
+                                                        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                                                    </form>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <div>No participants found.</div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Join / Close / Cancel Buttons -->
+            @if (isHost)
+            {
+                @if (!isEventClosed)
+                {
+                    <div id="host-button">
+                        <form asp-action="CloseEvent" asp-controller="Event" method="post" style="display:inline;"
+                              onsubmit="return confirm('Are you sure you want to close this event?');">
+                            <input type="hidden" name="eventId" value="@Model.Id" />
+                            <button type="submit" id="close-btn" class="btn btn-success">Close Event</button>
+                        </form>
+                        <form asp-action="CancelEvent" asp-controller="Event" method="post"
+                              onsubmit="return confirm('Are you sure you want to delete this event?');" style="display:inline;">
+                            <input type="hidden" name="eventId" value="@Model.Id" />
+                            <button type="submit" id="cancle-btn" class="btn btn-danger">Cancel Event</button>
+                        </form>
+                    </div>
+                }
+            }
+            else
+            {
+                if (!isEventClosed && !isEventFull)
+                {
+                    <div id="join-container">
+                        @if (ViewBag.HasJoined == true)
+                        {
+                            <p style="color: green;">You have already joined this event.</p>
+                        }
+                        else
+                        {
+                            <form asp-action="Join" asp-controller="Event" method="post" id="join-form">
+                                <input type="hidden" name="eventId" value="@Model.Id" />
+                                <button type="submit" class="btn btn-primary">Join Event</button>
+                            </form>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p style="color: red;"><strong>Event has closed!</strong></p>
+                }
+            }
+        </div>
+    </div>
+
+    <script>
+        // Toggle Light/Dark Mode & notifications
+        window.onload = function () {
+            let storedMode = localStorage.getItem("mode");
+            if (storedMode === "dark") {
+                document.body.classList.add("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                document.getElementById("modeicon").src = "@Url.Content("~/moon.png")";
+            } else {
+                document.body.classList.remove("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                document.getElementById("modeicon").src = "@Url.Content("~/sun.png")";
+            }
+        };
+
+        function toggleMode() {
+            let root = document.documentElement;
+            let modeIcon = document.getElementById("modeicon");
+            let storedMode = localStorage.getItem("mode");
+            if (storedMode === "dark") {
+                document.body.classList.remove("dark-mode");
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                localStorage.setItem("mode", "light");
+                modeIcon.src = "@Url.Content("~/sun.png")";
+            } else {
+                document.body.classList.add("dark-mode");
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                localStorage.setItem("mode", "dark");
+                modeIcon.src = "@Url.Content("~/moon.png")";
+            }
+        }
+
+        function toggleNotifications() {
+            const dropdown = document.getElementById("notification-dropdown");
+            dropdown.classList.toggle("hidden");
+        }
+
+        // Countdown for event closing
+        function updateCountdown() {
+            var closedDateStr = "@closedDateUtc";
+            if (!closedDateStr) return;
+            var closedDate = new Date(closedDateStr + "Z");
+            var now = new Date();
+            var timeDiff = closedDate - now;
+            if (timeDiff <= 0) {
+                var countdownElem = document.getElementById("countdown");
+                if (countdownElem) {
+                    countdownElem.innerHTML = "Event has closed!";
+                }
+                var joinContainer = document.getElementById("join-container");
+                if (joinContainer) {
+                    joinContainer.style.display = "none";
+                }
+                return;
+            }
+            var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var countdownText = days + " day" + (days != 1 ? "s " : " ") +
+                                hours + " hr" + (hours != 1 ? "s " : " ") +
+                                minutes + " min" + (minutes != 1 ? "s" : "");
+            var countdownElem2 = document.getElementById("countdown");
+            if (countdownElem2) {
+                countdownElem2.innerHTML = countdownText;
+            }
+            setTimeout(updateCountdown, 60000);
+        }
+        updateCountdown();
+
+        // Toggle Comment Box for participants or host
+        function toggleCommentBox(id) {
+            var commentBox = document.getElementById("commentBox-" + id);
+
+            if (!commentBox) {
+                console.error("Comment box not found for id:", id);
+                return;
+            }
+
+            // Check if the clicked comment box is already open
+            const isCurrentlyOpen = commentBox.classList.contains("show");
+
+            // Close all open comment boxes
+            document.querySelectorAll(".comment-box.show").forEach((box) => {
+                box.style.display = "none";
+                box.classList.remove("show");
+            });
+
+            // Toggle the clicked comment box
+            if (!isCurrentlyOpen) {
+                commentBox.style.display = "flex";
+                setTimeout(() => commentBox.classList.add("show"), 10);
+            }
+        }
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // ...
+        });
+    </script>
+
+    <script src="~/js/notifications.js?v=@DateTime.Now.Ticks"></script>
+</body>
+</html>

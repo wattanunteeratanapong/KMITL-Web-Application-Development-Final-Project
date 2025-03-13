@@ -1,0 +1,557 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Togeta.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Togeta.2pgbsaxid0.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\Icon.png",
+      "PackagePath": "staticwebassets\\Icon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\Iconblack.png",
+      "PackagePath": "staticwebassets\\Iconblack.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\clockicon.png",
+      "PackagePath": "staticwebassets\\clockicon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\commenticon.png",
+      "PackagePath": "staticwebassets\\commenticon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\Event.css",
+      "PackagePath": "staticwebassets\\css\\Event.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\EventDetail.css",
+      "PackagePath": "staticwebassets\\css\\EventDetail.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\calendar.css",
+      "PackagePath": "staticwebassets\\css\\calendar.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\comment.css",
+      "PackagePath": "staticwebassets\\css\\comment.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\edit.css",
+      "PackagePath": "staticwebassets\\css\\edit.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\notifications.css",
+      "PackagePath": "staticwebassets\\css\\notifications.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\profile.css",
+      "PackagePath": "staticwebassets\\css\\profile.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\recommendedBox.css",
+      "PackagePath": "staticwebassets\\css\\recommendedBox.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\css\\signup.css",
+      "PackagePath": "staticwebassets\\css\\signup.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\default-cover.jpg",
+      "PackagePath": "staticwebassets\\default-cover.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\default-profile.jpg",
+      "PackagePath": "staticwebassets\\default-profile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\editicon.png",
+      "PackagePath": "staticwebassets\\editicon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\js\\notifications.js",
+      "PackagePath": "staticwebassets\\js\\notifications.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\js\\signup.js",
+      "PackagePath": "staticwebassets\\js\\signup.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\kickicon.png",
+      "PackagePath": "staticwebassets\\kickicon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\locationicon.png",
+      "PackagePath": "staticwebassets\\locationicon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\moon.png",
+      "PackagePath": "staticwebassets\\moon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\noti icon.png",
+      "PackagePath": "staticwebassets\\noti icon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\paticipantlogo.png",
+      "PackagePath": "staticwebassets\\paticipantlogo.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\profile icon.png",
+      "PackagePath": "staticwebassets\\profile icon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\search icon.png",
+      "PackagePath": "staticwebassets\\search icon.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\sun.png",
+      "PackagePath": "staticwebassets\\sun.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\1_VcVML7BKIeUfZD_45DvkNg - Copy.png",
+      "PackagePath": "staticwebassets\\uploads\\1_VcVML7BKIeUfZD_45DvkNg - Copy.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\1_VcVML7BKIeUfZD_45DvkNg.png",
+      "PackagePath": "staticwebassets\\uploads\\1_VcVML7BKIeUfZD_45DvkNg.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\1_kkXjMMWpRHkV7CIfCGXugA.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1_kkXjMMWpRHkV7CIfCGXugA.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\272d91377ec54301f73325a2573090faa4-21-bojack-10.2x.rsocial.w600.png",
+      "PackagePath": "staticwebassets\\uploads\\272d91377ec54301f73325a2573090faa4-21-bojack-10.2x.rsocial.w600.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\57ccc2807224d1cbf87f6e1ae659acfb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\57ccc2807224d1cbf87f6e1ae659acfb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\8heTrB.png",
+      "PackagePath": "staticwebassets\\uploads\\8heTrB.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\99659205445efa5dc5c1176568c368677755b3a3_hq.jpg",
+      "PackagePath": "staticwebassets\\uploads\\99659205445efa5dc5c1176568c368677755b3a3_hq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\AAAABVCIXW0fS6lxuT0FjYCZ_5kgPnzF55Yb3XJCT5LUAlsRBXjk9DED2UgZDh2rPlojfEYkS7w3-5-R-ZBS9azhSgXYo57MHTlE54Z6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\AAAABVCIXW0fS6lxuT0FjYCZ_5kgPnzF55Yb3XJCT5LUAlsRBXjk9DED2UgZDh2rPlojfEYkS7w3-5-R-ZBS9azhSgXYo57MHTlE54Z6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\AMBITIOUS (1).png",
+      "PackagePath": "staticwebassets\\uploads\\AMBITIOUS (1).png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\AMBITIOUS.avif",
+      "PackagePath": "staticwebassets\\uploads\\AMBITIOUS.avif"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\Anatomy_of_a_Sunset-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\Anatomy_of_a_Sunset-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\Diane-as-Tourist.png",
+      "PackagePath": "staticwebassets\\uploads\\Diane-as-Tourist.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\Mr.-Peanutbutter-Costume_600x.webp",
+      "PackagePath": "staticwebassets\\uploads\\Mr.-Peanutbutter-Costume_600x.webp"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\OpEd-BoJackHorseman_Season6_Episode10_00_23_01_01 (1).png",
+      "PackagePath": "staticwebassets\\uploads\\OpEd-BoJackHorseman_Season6_Episode10_00_23_01_01 (1).png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\Screen_Shot_2020-05-10_at_2.40.26_PM.webp",
+      "PackagePath": "staticwebassets\\uploads\\Screen_Shot_2020-05-10_at_2.40.26_PM.webp"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\a-red-devil-wearing-a-black-vest-white-shirt-and-blac.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a-red-devil-wearing-a-black-vest-white-shirt-and-blac.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\asking-your-opinion-on-a-bojack-horseman-character-every-v0-lr1rmpgs87x91 (1).webp",
+      "PackagePath": "staticwebassets\\uploads\\asking-your-opinion-on-a-bojack-horseman-character-every-v0-lr1rmpgs87x91 (1).webp"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\asking-your-opinion-on-a-bojack-horseman-character-every-v0-lr1rmpgs87x91.webp",
+      "PackagePath": "staticwebassets\\uploads\\asking-your-opinion-on-a-bojack-horseman-character-every-v0-lr1rmpgs87x91.webp"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\b_party.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b_party.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\b_sea.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b_sea.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\b_work.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b_work.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\basketball.jpg",
+      "PackagePath": "staticwebassets\\uploads\\basketball.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\bojack - Copy.png",
+      "PackagePath": "staticwebassets\\uploads\\bojack - Copy.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\bojack-horseman-en-el-N7jDHtoqWlY-Vazf9xpc62B.webp",
+      "PackagePath": "staticwebassets\\uploads\\bojack-horseman-en-el-N7jDHtoqWlY-Vazf9xpc62B.webp"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\bojack-horseman.webp",
+      "PackagePath": "staticwebassets\\uploads\\bojack-horseman.webp"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\bojack.png",
+      "PackagePath": "staticwebassets\\uploads\\bojack.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\bongrs4t4rlz.webp",
+      "PackagePath": "staticwebassets\\uploads\\bongrs4t4rlz.webp"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\car.jpg",
+      "PackagePath": "staticwebassets\\uploads\\car.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\cx9xr5hyzyg91.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cx9xr5hyzyg91.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\d268eaf1cb956c02eba2edf728663887ce-19-bojack-todd.rsocial.w1200.webp",
+      "PackagePath": "staticwebassets\\uploads\\d268eaf1cb956c02eba2edf728663887ce-19-bojack-todd.rsocial.w1200.webp"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\default-profile.jpg",
+      "PackagePath": "staticwebassets\\uploads\\default-profile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\food.jpg",
+      "PackagePath": "staticwebassets\\uploads\\food.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\gay.jpg",
+      "PackagePath": "staticwebassets\\uploads\\gay.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\golf.jpg",
+      "PackagePath": "staticwebassets\\uploads\\golf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\images.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\math.jpg",
+      "PackagePath": "staticwebassets\\uploads\\math.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\motorcycle.jpg",
+      "PackagePath": "staticwebassets\\uploads\\motorcycle.jpg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\o-bojack-facebook.png",
+      "PackagePath": "staticwebassets\\uploads\\o-bojack-facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\original.png",
+      "PackagePath": "staticwebassets\\uploads\\original.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\profile2.png",
+      "PackagePath": "staticwebassets\\uploads\\profile2.png"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\rbg2ngpbm4kc1.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\rbg2ngpbm4kc1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\watta\\OneDrive\\เอกสาร\\Coursework\\Year2\\Semester2\\Web Application Development Project\\Project\\Togeta\\wwwroot\\uploads\\sea.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sea.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Togeta.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Togeta.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.Togeta.props",
+      "PackagePath": "build\\Togeta.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.Togeta.props",
+      "PackagePath": "buildMultiTargeting\\Togeta.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.Togeta.props",
+      "PackagePath": "buildTransitive\\Togeta.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

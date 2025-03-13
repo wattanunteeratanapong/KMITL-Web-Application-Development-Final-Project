@@ -1,0 +1,89 @@
+/* Notification Dropdown */
+#notification-dropdown {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: hidden; /* Hidden by default */
+}
+
+#notification-dropdown.hidden {
+    display: none; /* Hide the dropdown when the hidden class is applied */
+}
+
+#notification-dropdown h4 {
+    margin: 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#notification-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#notification-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+#notification-list li:last-child {
+    border-bottom: none;
+}
+
+#notification-list li:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.notification-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.notification-btn {
+    padding: 5px 10px;
+    background-color: var(--padlet-3);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.notification-btn:hover {
+    opacity: 0.9;
+}
+
+#clear-btn {
+    background-color: #d9534f;
+}
+
+#notification-list li.unread {
+    font-weight: 600;
+    background-color: rgba(87, 142, 126, 0.1); /* Light version of your green theme color */
+    border-left: 3px solid #578E7E;
+    padding-left: 7px;
+}
+
+/* Read notifications - more subtle appearance */
+#notification-list li.read {
+    opacity: 0.7;
+    color: #777;
+    background-color: transparent;
+}

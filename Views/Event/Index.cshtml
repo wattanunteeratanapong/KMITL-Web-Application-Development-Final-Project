@@ -1,0 +1,230 @@
+﻿@model Togeta.Models.Event
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Togeta</title>
+    <link rel="stylesheet" href="~/css/Event.css?v=@DateTime.Now.Ticks">
+    <!-- Include flatpickr if needed -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="~/css/notifications.css?v=@DateTime.Now.Ticks">
+
+    <!-- Google Fonts or other resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="canvas">
+        <!-- Navbar with dark mode toggle -->
+        <div id="navbar">
+            <a asp-controller="Home" asp-action="Index" id="leftdiv">Togeta</a>
+
+            <div id="rightdiv">
+                <div id="modediv">
+                    <div id="toggle-container" onclick="toggleMode()">
+                        <div id="toggle-circle">
+                            <img id="modeicon" src="@Url.Content("~/sun.png")" alt="modeicon" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification -->
+                <div id="notification-container">
+                    <a href="javascript:void(0)" id="notidiv" onclick="toggleNotifications()">
+                        <img id="noti" src="~/noti icon.png" alt="notification bell">
+                    </a>
+                    <!-- Notification Dropdown -->
+                    <div id="notification-dropdown" class="hidden">
+                        <h4>Notifications</h4>
+                        <ul id="notification-list">
+                        </ul>
+                        <div class="notification-actions">
+                            <button id="mark-read-btn" class="notification-btn">Mark as Read</button>
+                            <button id="clear-btn" class="notification-btn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <a asp-controller="Profile" asp-action="Index" id="profilediv">
+                    <div id="profileframe">
+                        <img id="profile" src="@Url.Content($"{ViewData["ProfileImage"]}")" alt="profile icon"
+                             onerror="this.src='@Url.Content("~/profile icon.png")'" />
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main container for creating an event -->
+        <div id="editbox">
+            <div id="edittitle">Create Event</div>
+
+            <!-- The form references StartDateTime, EndDateTime, and ClosedDate instead of old DateTime -->
+            <form id="formbox" method="post" asp-controller="Event" asp-action="Create" enctype="multipart/form-data">
+
+                <!-- Event Tag -->
+                <div id="tagbox" class="inputGroup">
+                    <label>Event Tag</label>
+                    <select id="tag" rows="1" asp-for="Tag">
+                        <option value="" selected hidden></option>
+                        <option value="🎲 Board Games">🎲 Board Games</option>
+                        <option value="🏆 Sport">🏆 Sport</option>
+                        <option value="🎮 Video Games">🎮 Video Games</option>
+                        <option value="🎶 Music">🎶 Music</option>
+                        <option value="🎬 Movies & TV Shows">🎬 Movies & TV Shows</option>
+                        <option value="📚 Books & Literature">📚 Books & Literature</option>
+                        <option value="💻 Technology & Gadgets">💻 Technology & Gadgets</option>
+                        <option value="💪 Fitness & Health">💪 Fitness & Health</option>
+                        <option value="🍽️ Food & Cooking">🍽️ Food & Cooking</option>
+                        <option value="✈️ Travel & Adventure">✈️ Travel & Adventure</option>
+                        <option value="📷 Photography">📷 Photography</option>
+                        <option value="🎨 Art & Design">🎨 Art & Design</option>
+                        <option value="📖 Anime & Manga">📖 Anime & Manga</option>
+                        <option value="💄 Fashion & Beauty">💄 Fashion & Beauty</option>
+                        <option value="✂️ DIY & Crafts">✂️ DIY & Crafts</option>
+                        <option value="🔬 Science & Space">🔬 Science & Space</option>
+                        <option value="🐶 Pets & Animals">🐶 Pets & Animals</option>
+                        <option value="💰 Finance & Investing">💰 Finance & Investing</option>
+                        <option value="🚗 Cars & Motorcycles">🚗 Cars & Motorcycles</option>
+                    </select>
+                </div>
+
+                <!-- Event Name -->
+                <div class="inputGroup">
+                    <label>Event Name</label>
+                    <input type="text" asp-for="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <!-- Start Date/Time -->
+                <div class="inputGroup">
+                    <label>Start Date/Time</label>
+                    <input type="datetime-local" asp-for="StartDateTime" />
+                    <span asp-validation-for="StartDateTime" class="text-danger"></span>
+                </div>
+
+                <!-- End Date/Time -->
+                <div class="inputGroup">
+                    <label>End Date/Time</label>
+                    <input type="datetime-local" asp-for="EndDateTime" />
+                    <span asp-validation-for="EndDateTime" class="text-danger"></span>
+                </div>
+
+                <!-- Close Date -->
+                <div class="inputGroup">
+                    <label>Close Date</label>
+                    <input type="datetime-local" asp-for="ClosedDate" />
+                    <span asp-validation-for="ClosedDate" class="text-danger"></span>
+                </div>
+
+                <!-- Location -->
+                <div id="locationbox" class="inputGroup">
+                    <label>Event Location</label>
+                    <input type="text" asp-for="location" />
+                    <span asp-validation-for="location" class="text-danger"></span>
+                </div>
+
+                <!-- Participants -->
+                <div id="participantbox" class="inputGroup">
+                    <label>Participants</label>
+                    <input type="number" asp-for="Participants" />
+                    <span asp-validation-for="Participants" class="text-danger"></span>
+                </div>
+
+                <!-- Description (multiline) -->
+                <div id="detailbox" class="inputGroup">
+                    <label>Description</label>
+                    <textarea asp-for="Detail" rows="2" class="custom-scrollbar"></textarea>
+                    <span asp-validation-for="Detail" class="text-danger"></span>
+                </div>
+
+                <!-- Event Image -->
+                <div id="imagebox" class="inputGroup">
+                    <label>Event Image</label>
+                    <input type="file" asp-for="ImageFile" accept="image/*" onchange="updateLabel(this)" />
+                </div>
+
+                <!-- Submit Button -->
+                <div id="createeventbutton" class="inputGroup">
+                    <button type="submit" class="updateBtn">Create Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Dark/Light Mode logic
+        window.onload = function () {
+            let storedMode = localStorage.getItem("mode");
+            if (storedMode === "dark") {
+                document.body.classList.add("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                document.getElementById("modeicon").src = "@Url.Content("~/moon.png")";
+            } else {
+                document.body.classList.remove("dark-mode");
+                let root = document.documentElement;
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                document.getElementById("modeicon").src = "@Url.Content("~/sun.png")";
+            }
+        }
+
+        function toggleMode() {
+            let root = document.documentElement;
+            let modeIcon = document.getElementById("modeicon");
+            let storedMode = localStorage.getItem("mode");
+
+            if (storedMode === "dark") {
+                document.body.classList.remove("dark-mode");
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                localStorage.setItem("mode", "light");
+                modeIcon.src = "@Url.Content("~/sun.png")";
+            } else {
+                document.body.classList.add("dark-mode");
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                localStorage.setItem("mode", "dark");
+                modeIcon.src = "@Url.Content("~/moon.png")";
+            }
+        }
+
+        // Update label when user selects an image
+        function updateLabel(input) {
+            let label = document.getElementById("imagelabel");
+            if (input.files.length > 0) {
+                label.textContent = input.files[0].name;
+            } else {
+                label.textContent = "Choose an Image";
+            }
+        }
+    </script>
+
+    <!-- jQuery Validation (optional if you use client-side validation) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/notifications.js"></script>
+</body>
+</html>

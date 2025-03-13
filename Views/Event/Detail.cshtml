@@ -1,0 +1,35 @@
+﻿@model List<Togeta.Models.Event>
+
+    @{
+    Layout = null;
+    }
+
+    @foreach (var Event in Model.OrderByDescending(e => e.Id).Take(1))
+{
+    <div>
+        @{
+            var encodedLocation = Uri.EscapeDataString(Event.location); // Use Event not @Event
+        }
+        <a href="@Url.Action("Index", "Home")">Back Home</a>
+
+        <a href="https://www.google.co.th/maps/search/@encodedLocation" target="_blank">
+            Go to location
+        </a>
+        <p>Name: @Event.Name</p>
+
+        <p>Date time: @Event.StartDateTime.ToString("dd/MM/yyyy HH:mm") - @Event.EndDateTime.ToString("dd/MM/yyyy HH:mm")</p>
+
+        <p>Location: @Event.location</p>
+
+        <p>Participants: @Event.Participants</p>
+
+        <p>Tag: @Event.Tag</p>
+
+        <p>Details: @Event.Detail</p>
+
+        @* Uncomment if you want to display the image *@
+         <img src="@Url.Content(@Event.Imagepath)" /> 
+
+
+    </div>
+}

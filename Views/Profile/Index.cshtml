@@ -1,0 +1,347 @@
+﻿@model Togeta.Models.User
+@using System.Globalization
+
+@{
+    Layout = null;
+
+    // Get logged‐in username from session.
+    var usernameInSession = Context.Session.GetString("Username") ?? string.Empty;
+
+    // Determine if the profile being viewed is your own.
+    var isOwner = (usernameInSession == Model.Username);
+
+    // Get all users passed via ViewBag; if not provided, use an empty list.
+    var users = ViewBag.Users as List<Togeta.Models.User> ?? new List<Togeta.Models.User>();
+
+    // Find the logged‑in user based on session.
+    var currentUser = users.FirstOrDefault(u => u.Username == usernameInSession);
+    var currentUserId = currentUser != null ? currentUser.Id : 0;
+
+    // Get profile image for the logged‑in user.
+    var currentUserProfileImage = ViewData["ProfileImage"]?.ToString() ?? "~/default-profile.jpg";
+
+    // ===============================
+    // 1) Calculate the comment count
+    // ===============================
+    // If ViewBag.Comment is a list of all comments about this user (Model),
+    // we can filter to see how many are for this user.
+    int commentCount = 0;
+    if (ViewBag.Comment != null)
+    {
+        var commentList = ViewBag.Comment as List<Togeta.Models.Comment>;
+        commentCount = commentList.Count(c => c.ReceiverId == Model.Id);
+    }
+}
+
+@functions {
+    string GetTagColor(string tag)
+    {
+        switch (tag)
+        {
+            case "📖 Anime & Manga": return "#D9A25F";
+            case "🎨 Art & Design": return "#89B0A5";
+            case "🎲 Board Games": return "#6D5B95";
+            case "📚 Books & Literature": return "#3D3D3D";
+            case "🚗 Cars & Motorcycles": return "#D9A25F";
+            case "✂️ DIY & Crafts": return "#89B0A5";
+            case "💄 Fashion & Beauty": return "#6D5B95";
+            case "💰 Finance & Investing": return "#3D3D3D";
+            case "💪 Fitness & Health": return "#D9A25F";
+            case "🍽️ Food & Cooking": return "#89B0A5";
+            case "🎬 Movies & TV Shows": return "#6D5B95";
+            case "🎶 Music": return "#3D3D3D";
+            case "🐶 Pets & Animals": return "#D9A25F";
+            case "📷 Photography": return "#89B0A5";
+            case "🔬 Science & Space": return "#6D5B95";
+            case "🏆 Sport": return "#3D3D3D";
+            case "💻 Technology & Gadgets": return "#D9A25F";
+            case "✈️ Travel & Adventure": return "#89B0A5";
+            case "🎮 Video Games": return "#6D5B95";
+            default: return "#CCCCCC";
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Togeta</title>
+    <link rel="stylesheet" href="~/css/profile.css?v=@DateTime.Now.Ticks">
+    <link rel="stylesheet" href="~/css/notifications.css?v=@DateTime.Now.Ticks">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="canvas">
+        <!-- Navbar -->
+        <div id="navbar">
+            <a href="@Url.Action("Index", "Home")" id="leftdiv">Togeta</a>
+            <div id="rightdiv">
+                <!-- Toggle Mode -->
+                <div id="modediv">
+                    <div id="toggle-container" onclick="toggleMode()">
+                        <div id="toggle-circle">
+                            <img id="modeicon" src="sun.png" alt="modeicon">
+                        </div>
+                    </div>
+                </div>
+                <!-- Notification -->
+                <div id="notification-container">
+                    <a href="javascript:void(0)" id="notidiv" onclick="toggleNotifications()">
+                        <img id="noti" src="~/noti icon.png" alt="notification bell">
+                    </a>
+                    <!-- Notification Dropdown -->
+                    <div id="notification-dropdown" class="hidden">
+                        <h4>Notifications</h4>
+                        <ul id="notification-list">
+                        </ul>
+                        <div class="notification-actions">
+                            <button id="mark-read-btn" class="notification-btn">Mark as Read</button>
+                            <button id="clear-btn" class="notification-btn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Profile Icon: Always links to the logged-in user's profile -->
+                <a href="@Url.Action("Index", "Profile", new { id = currentUserId })" id="profilediv">
+                    <img id="profile-icon" src="@Url.Content($"{ViewData["ProfileImage"]}")" alt="profile icon"
+                        onerror="this.src='@Url.Content("~/default-profile.jpg")'" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Profile Box -->
+        <div id="profilebox">
+            <!-- Cover Image + Menu (if owner) -->
+            <div id="mainprofilediv" style="position: relative;">
+                <img id="cover-image" src="@Model.CoverImagePath" alt="Cover Image">
+                @if (isOwner)
+                {
+                    <div id="menu-container">
+                        <button id="edit-profile-btn" onclick="toggleMenu()">
+                            <img src="@Url.Content("~/editicon.png")" alt="Edit Menu" width="25" />
+                        </button>
+                        <div id="menu-dropdown">
+                            <a class="dropdown-link" href="@Url.Action("Edit", "Profile")" style="display: block;">
+                                Edit Profile
+                            </a>
+                            <a class="dropdown-link" href="@Url.Action("Logout", "Login")" style="display: block;">
+                                Log Out
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Profile Content -->
+            <div id="contentdiv">
+                <img id="profile-picture" src="@Model.ProfileImagePath" alt="Profile Picture">
+                <div id="profile-name">@Model.FirstName @Model.LastName (@Model.Gender)</div>
+                <div id="profile-bio">@Model.Bio</div>
+
+                <!-- Display 2 decimals + number of comments -->
+                <div id="profile-score">
+                    ⭐ @(Model.CreditScore.ToString("F2")) (@commentCount) ⭐
+                </div>
+
+                @* Display user interests *@
+                @{
+                    var interests = Model.Interests?.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(i => i.Trim())
+                    .ToArray() ?? new string[0];
+                }
+                <div id="profile-tag">
+                    @foreach (var interest in interests)
+                    {
+                        <span class="interest-item" style="background-color: @(GetTagColor(interest));">
+                            @interest
+                        </span>
+                    }
+                </div>
+            </div>
+
+            <!-- Activity Section (Joined/Hosted Events, Reviews) -->
+            <div id="activitybox">
+                <div id="catagory">
+                    <!-- Joined Events -->
+                    <div id="joineventdiv">
+                        <div id="joinlabel">Joined Events</div>
+                        <div id="joinevents" class="custom-scrollbar">
+                            @if (ViewBag.EventUsers != null && ViewBag.EventUsers.Count > 0)
+                            {
+                                var now = DateTime.Now;
+                                var allJoined = (IEnumerable<Togeta.Models.EventUser>)ViewBag.EventUsers;
+
+                                var activeJoined = allJoined
+                                .Where(eu => eu.Event.ClosedDate == null || eu.Event.ClosedDate > now)
+                                .OrderBy(eu => eu.Event.StartDateTime)
+                                .ToList();
+
+                                var closedJoined = allJoined
+                                .Where(eu => eu.Event.ClosedDate != null && eu.Event.ClosedDate <= now)
+                                .OrderByDescending(eu => eu.Event.StartDateTime)
+                                .ToList();
+
+                                var finalJoined = activeJoined.Concat(closedJoined).ToList();
+
+                                @foreach (var eventUser in finalJoined)
+                                {
+                                    bool isClosed = eventUser.Event.ClosedDate != null && eventUser.Event.ClosedDate <= now;
+                                    <div class="event">
+                                        <a asp-controller="Event" asp-action="DetailEachBox" asp-route-id="@eventUser.Event.Id">
+                                            <div class="eventbox" style="@(isClosed ? "color: red;" : "")">
+                                                <div class="event-tag"
+                                                    style="background-color: @(GetTagColor(eventUser.Event.Tag)); color: #FFFAEC;">
+                                                    @eventUser.Event.Tag
+                                                </div>
+                                                <div class="event-name">@eventUser.Event.Name</div>
+                                                <div class="event-time">
+                                                    @eventUser.Event.StartDateTime.ToString("dd/MM/yyyy HH:mm")
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Hosted Events -->
+                    <div id="hosteventdiv">
+                        <div id="hostlabel">Hosted Events</div>
+                        <div id="hostevents" class="custom-scrollbar">
+                            @if (ViewBag.Events != null && ViewBag.Events.Count > 0)
+                            {
+                                var now = DateTime.Now;
+                                var allHosted = (IEnumerable<Togeta.Models.Event>)ViewBag.Events;
+
+                                var activeHosted = allHosted
+                                .Where(e => e.ClosedDate == null || e.ClosedDate > now)
+                                .OrderBy(e => e.StartDateTime)
+                                .ToList();
+
+                                var closedHosted = allHosted
+                                .Where(e => e.ClosedDate != null && e.ClosedDate <= now)
+                                .OrderByDescending(e => e.StartDateTime)
+                                .ToList();
+
+                                var finalHosted = activeHosted.Concat(closedHosted).ToList();
+
+                                @foreach (var hostevent in finalHosted)
+                                {
+                                    bool isClosed = hostevent.ClosedDate != null && hostevent.ClosedDate <= now;
+                                    <div class="event">
+                                        <a asp-controller="Event" asp-action="DetailEachBox" asp-route-id="@hostevent.Id">
+                                            <div class="eventbox" style="@(isClosed ? "color: red;" : "")">
+                                                <div class="event-tag"
+                                                    style="background-color: @(GetTagColor(hostevent.Tag)); color: #FFFAEC;">
+                                                    @hostevent.Tag
+                                                </div>
+                                                <div class="event-name">@hostevent.Name</div>
+                                                <div class="event-time">
+                                                    @hostevent.StartDateTime.ToString("dd/MM/yyyy HH:mm")
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <div id="reviewdiv">
+                        <div id="reviewlabel">Reviews</div>
+                        <div id="reviews" class="custom-scrollbar">
+                            @foreach (var review in ViewBag.Comment)
+                            {
+                                var sender = users.FirstOrDefault(u => u.Id == review.SenderId);
+                                if (sender != null)
+                                {
+                                    <a class="review-item" asp-controller="Event" asp-action="DetailEachBox"
+                                        asp-route-id="@review.Event.Id">
+                                        <div class="sender-name" style="background-color: @(GetTagColor(review.Event?.Tag));">
+                                            @sender.FirstName @sender.LastName
+                                        </div>
+                                        <p>@review.Content</p>
+                                        <span class="event-name">@review.Event?.Name</span>
+                                        <span class="review-date">@review.CreatedAt.ToString("yyyy-MM-dd HH:mm")</span>
+                                    </a>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS for Dark/Light Mode & Dropdown -->
+    <script>
+        window.onload = function () {
+            let storedMode = localStorage.getItem("mode");
+            let modeicon = document.getElementById("modeicon");
+            let root = document.documentElement;
+            if (storedMode === "dark") {
+                document.body.classList.add("dark-mode");
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                modeicon.src = "@Url.Content("~/moon.png")";
+            } else {
+                document.body.classList.remove("dark-mode");
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                modeicon.src = "@Url.Content("~/sun.png")";
+            }
+        };
+
+        function toggleMode() {
+            let root = document.documentElement;
+            let modeicon = document.getElementById("modeicon");
+            let storedMode = localStorage.getItem("mode");
+            if (storedMode === "dark") {
+                document.body.classList.remove("dark-mode");
+                root.style.setProperty("--padlet-1", "#F5ECD5");
+                root.style.setProperty("--padlet-2", "#FFFAEC");
+                root.style.setProperty("--padlet-3", "#578E7E");
+                root.style.setProperty("--padlet-4", "#3D3D3D");
+                root.style.setProperty("--padlet-5", "#9AB9AA");
+                localStorage.setItem("mode", "light");
+                modeicon.src = "@Url.Content("~/sun.png")";
+            } else {
+                document.body.classList.add("dark-mode");
+                root.style.setProperty("--padlet-1", "#222222");
+                root.style.setProperty("--padlet-2", "#333333");
+                root.style.setProperty("--padlet-3", "#888888");
+                root.style.setProperty("--padlet-4", "#ffffff");
+                root.style.setProperty("--padlet-5", "#555555");
+                localStorage.setItem("mode", "dark");
+                modeicon.src = "@Url.Content("~/moon.png")";
+            }
+        }
+
+        function toggleMenu() {
+            var menuDropdown = document.getElementById("menu-dropdown");
+            if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                menuDropdown.style.display = "block";
+            } else {
+                menuDropdown.style.display = "none";
+            }
+        }
+    </script>
+    <script src="~/js/notifications.js"></script>
+</body>
+
+</html>
