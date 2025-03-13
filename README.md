@@ -2,11 +2,11 @@
 01076119 WEB APPLICATION DEVELOPMENT
 
 ## Member
-66011377 <br>
-66011383 <br>
-66011428 <br>
-66011464 <br>
-66011476 <br>
+66011377 Tanagorn Fukuhara (Backend) <br>
+66011383 Tanawat Sawangwong (Backend) <br>
+66011428 Pongsapak Tatongjai (UX/XI) <br>
+66011464 Ratha Rotruchiphong (Backend) <br>
+66011476 Wattanun Teeratanapong (Fullstack) <br>
 <br>
 
 ## Preview
