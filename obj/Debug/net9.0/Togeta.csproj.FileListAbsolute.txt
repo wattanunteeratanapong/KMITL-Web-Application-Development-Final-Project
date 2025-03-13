@@ -8546,11 +8546,9 @@ C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Applic
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\jopzsyjxui-l046j8jaeq.gz
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\m1kd0g2t9w-3nby2ymgde.gz
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\5qh77fqp3u-2nn970zbym.gz
-C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\5iuo48butg-xlg8abftw6.gz
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\32bbylrain-08idj3si6m.gz
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\jo4rgrci3m-jhe483ub7w.gz
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\cta0hmk8ae-94mps3rheb.gz
-C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\8l8lmh1ggk-ct99jtv53u.gz
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\fpem1ejjdk-uyvwgdlrl6.gz
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\pwpgfwkb6e-c98gpd2rib.gz
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\rulccndtn2-04sjocjymi.gz
@@ -8631,3 +8629,6 @@ C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Applic
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\Togeta.pdb
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\Togeta.genruntimeconfig.cache
 C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\ref\Togeta.dll
+C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\Togeta.sourcelink.json
+C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\5iuo48butg-xlg8abftw6.gz
+C:\Users\watta\OneDrive\เอกสาร\Coursework\Year2\Semester2\Web Application Development Project\Project\Togeta\obj\Debug\net9.0\compressed\8l8lmh1ggk-ct99jtv53u.gz
